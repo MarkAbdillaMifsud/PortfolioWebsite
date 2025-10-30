@@ -558,6 +558,7 @@ hr {
 /* ===== Nav dropdowns ===== */
 .nav-item.dropdown {
     position: relative;
+    padding-bottom: 6px;
 }
 
 .nav-trigger {
@@ -583,7 +584,8 @@ hr {
     inset-inline-start: 0;
     inset-block-start: 100%;
     min-width: 240px;
-    margin-top: 6px;
+    margin-top: 0;
+    /* was 6px → 0 to avoid a “dead zone” */
     padding: 8px;
     border: 1px solid var(--border);
     background: var(--surface);

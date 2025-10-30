@@ -2,6 +2,10 @@
   var dropdowns = document.querySelectorAll('.nav-item.dropdown');
   if (!dropdowns.length) return;
 
+  var isPointerHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
+  var closeDelayMs = 160;
+  var timers = new Map(); // menuId -> timeoutId
+
   function closeAll(exceptId) {
     dropdowns.forEach(function (dd) {
       var btn = dd.querySelector('.nav-trigger');
@@ -19,19 +23,13 @@
     menu.setAttribute('data-open', 'true');
   }
 
-  function toggle(e) {
-    var btn = e.currentTarget;
-    var menu = document.getElementById(btn.getAttribute('aria-controls'));
-    var expanded = btn.getAttribute('aria-expanded') === 'true';
-    if (expanded) {
+  function scheduleClose(menu, btn) {
+    clearTimeout(timers.get(menu.id));
+    var id = setTimeout(function () {
       btn.setAttribute('aria-expanded', 'false');
       menu.removeAttribute('data-open');
-    } else {
-      openMenu(btn, menu);
-      // move focus to first item for keyboard users
-      var first = menu.querySelector('a');
-      if (first) first.focus();
-    }
+    }, closeDelayMs);
+    timers.set(menu.id, id);
   }
 
   dropdowns.forEach(function (dd) {
@@ -39,8 +37,29 @@
     var menu = dd.querySelector('.menu');
     if (!btn || !menu) return;
 
-    // Click/tap
-    btn.addEventListener('click', toggle);
+    // Desktop (pointer hover): open on hover, close on delayed mouseleave
+    if (isPointerHover) {
+      dd.addEventListener('mouseenter', function () {
+        clearTimeout(timers.get(menu.id));
+        openMenu(btn, menu);
+      });
+      dd.addEventListener('mouseleave', function () {
+        scheduleClose(menu, btn);
+      });
+    }
+
+    // Click/tap toggle (mobile and also allowed on desktop)
+    btn.addEventListener('click', function (e) {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      if (expanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        menu.removeAttribute('data-open');
+      } else {
+        openMenu(btn, menu);
+        var first = menu.querySelector('a');
+        if (first) first.focus();
+      }
+    });
 
     // Keyboard on trigger
     btn.addEventListener('keydown', function (e) {
@@ -52,13 +71,14 @@
       }
     });
 
-    // Keyboard within menu
+    // Keyboard inside menu
     menu.addEventListener('keydown', function (e) {
       var items = Array.from(menu.querySelectorAll('a'));
       var i = items.indexOf(document.activeElement);
       if (e.key === 'Escape') {
         e.preventDefault();
-        closeAll();
+        btn.setAttribute('aria-expanded', 'false');
+        menu.removeAttribute('data-open');
         btn.focus();
       } else if (e.key === 'ArrowDown') {
         e.preventDefault();
@@ -76,17 +96,16 @@
     });
   });
 
-  // Close on outside click
+  // Close on outside click (all devices)
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.nav-item.dropdown')) closeAll();
   });
 
-  // Close on focus leaving nav (Tab past it)
-  document.addEventListener('focusin', function (e) {
-    var within = e.target.closest('.nav-item.dropdown');
-    if (!within) {
-      // Defer to allow focus to land before closing to avoid flicker
-      setTimeout(function(){ closeAll(); }, 0);
-    }
-  });
+  // Close on focus leaving nav — MOBILE/KEYBOARD ONLY.
+  // Avoid fighting desktop hover. Gate by !isPointerHover.
+  if (!isPointerHover) {
+    document.addEventListener('focusin', function (e) {
+      if (!e.target.closest('.nav-item.dropdown')) closeAll();
+    });
+  }
 })();
