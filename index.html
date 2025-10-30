@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mark Abdilla Mifsud - Game Design Portfolio</title>
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (
+          !t &&
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: light)").matches
+        ) {
+          document.documentElement.setAttribute("data-theme", "light");
+        } else if (t === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <section id="top-bar" class="container">
+      <div class="heading-container">
+        <div class="name-container">
+          <h1>Mark Abdilla Mifsud</h1>
+          <h2>Principal Monetization Manager and Game Designer</h2>
+        </div>
+        <div class="links-container">
+          <button
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Toggle light/dark mode"
+            title="Toggle theme"
+          >
+            <span class="theme-toggle__icon" aria-hidden="true"></span>
+            <span class="sr-only">Toggle theme</span>
+          </button>
+          <a href="https://github.com/MarkAbdillaMifsud/"
+            ><img src="./assets/github.png" alt="Github Logo"
+          /></a>
+          <a href="https://www.linkedin.com/in/mark-abdilla/"
+            ><img src="./assets/Linkedin.png" alt="LinkedIn Logo"
+          /></a>
+          <a href="./assets/Mark_Abdilla_Mifsud_Resume.pdf"
+            ><img src="./assets/PDF.png" alt="Resume PDF"
+          /></a>
+        </div>
+      </div>
+      <hr />
+      <!-- Navigation -->
+      <nav class="nav-bar" aria-label="Primary">
+        <div><a href="./index.html">Home</a></div>
+
+        <div class="nav-item dropdown">
+          <button
+            class="nav-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="menu-professional"
+          >
+            Professional Projects
+          </button>
+          <ul id="menu-professional" class="menu" role="menu">
+            <li role="none">
+              <a role="menuitem" href="./ww3.html">Supremacy: WW3</a>
+            </li>
+            <!-- Add more professional projects here -->
+            <!-- <li role="none"><a role="menuitem" href="./warhammer.html">Warhammer 40K: Supremacy</a></li> -->
+          </ul>
+        </div>
+
+        <div class="nav-item dropdown">
+          <button
+            class="nav-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="menu-personal"
+          >
+            Personal Projects
+          </button>
+          <ul id="menu-personal" class="menu" role="menu">
+            <li role="none">
+              <a role="menuitem" href="./wdcc.html"
+                >Wacky’s Dungeon Combat Club</a
+              >
+            </li>
+            <li role="none">
+              <a role="menuitem" href="./shattered.html"
+                >Shattered: Repair Your Identity</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div><a href="./about.html">About and Resume</a></div>
+      </nav>
+      <hr />
+    </section>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- Projects -->
+    <main id="main" class="container">
+      <div class="projects-container">
+        <div class="projects-grid">
+          <div class="project-card">
+            <img
+              class="card-hero"
+              src="./assets/ww3.jpg"
+              alt="Supremacy: WW3 – key art"
+            />
+            <h3><a href="./ww3.html">Supremacy: WW3</a></h3>
+            <p>
+              Take control of your nation. Become responsible for its military
+              expansion, technological research and economic development. Form
+              alliances and wage total war for global dominance on the
+              battlefields of World War 3.
+            </p>
+            <p class="role">Role: Community Manager / Monetization Manager</p>
+          </div>
+
+          <div class="project-card">
+            <img
+              class="card-hero"
+              src="./assets/wh-poster.png"
+              alt="Warhammer 40K: Supremacy promotional poster"
+            />
+            <h3>Warhammer 40K: Supremacy</h3>
+            <p>
+              War is unending on Planet Vigilus. Take control of one of four
+              Warhammer 40K factions and lead your people to victory against
+              your enemies.
+            </p>
+            <p class="role">Role: Principal Monetization Manager</p>
+          </div>
+
+          <div class="project-card">
+            <img
+              class="card-hero"
+              src="./assets/wdcc.png"
+              alt="Wacky's Dungeon Combat Club logo"
+            />
+            <h3>Wacky's Dungeon Combat Club</h3>
+            <p>
+              A comedic roguelike where you fight through waves of enemies and
+              gain infamy in the WDCC.
+            </p>
+            <p class="role">Role: Solo Developer</p>
+          </div>
+
+          <div class="project-card">
+            <img
+              class="card-hero"
+              src="./assets/shattered_logo.png"
+              alt="Shattered: Repair Your Identity logo"
+            />
+            <h3>Shattered: Repair Your Identity</h3>
+            <p>
+              Waking up in an empty house, you have no recollection of your
+              identity. Explore the house, discover your past, and piece
+              together the fragments.
+            </p>
+            <p class="role">Role: Game and Audio Designer</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools Bar -->
+      <div class="skills-container">
+        <img src="./assets/Unity.png" alt="Unity" />
+        <img src="./assets/html.png" alt="HTML" />
+        <img src="./assets/css.png" alt="CSS" />
+        <img src="./assets/js.png" alt="Javascript" />
+        <img src="./assets/python.png" alt="Python" />
+        <img src="./assets/java.png" alt="Java" />
+      </div>
+    </main>
+    <!-- Footer -->
+    <div class="footer container">
+      <hr />
+      <p>© Mark Abdilla Mifsud</p>
+      <p>All content and trademarks property of their respective owners.</p>
+    </div>
+    <script src="./assets/js/theme.js" defer></script>
+    <script src="./assets/js/nav.js" defer></script>
+  </body>
+</html>

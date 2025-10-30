@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About & Resume — Mark Abdilla Mifsud</title>
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (
+          !t &&
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: light)").matches
+        ) {
+          document.documentElement.setAttribute("data-theme", "light");
+        } else if (t === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <section id="top-bar" class="container">
+      <div class="heading-container">
+        <div class="name-container">
+          <h1>Mark Abdilla Mifsud</h1>
+          <h2>Principal Monetization Manager and Game Designer</h2>
+        </div>
+        <div class="links-container" aria-label="External links">
+          <button
+          id="themeToggle"
+          class="theme-toggle"
+          aria-label="Toggle light/dark mode"
+          title="Toggle theme"
+        >
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+          <span class="sr-only">Toggle theme</span>
+        </button>
+          <a href="https://github.com/MarkAbdillaMifsud/"
+            ><img src="./assets/github.png" alt="GitHub" width="40" height="40"
+          /></a>
+          <a href="https://www.linkedin.com/in/mark-abdilla/"
+            ><img
+              src="./assets/Linkedin.png"
+              alt="LinkedIn"
+              width="40"
+              height="40"
+          /></a>
+          <a href="./assets/Mark_Abdilla_Mifsud_Resume.pdf"
+            ><img
+              src="./assets/PDF.png"
+              alt="Resume PDF"
+              width="40"
+              height="40"
+          /></a>
+        </div>
+      </div>
+      <hr />
+      <!-- Navigation -->
+      <nav class="nav-bar" aria-label="Primary">
+        <div><a href="./index.html">Home</a></div>
+
+        <div class="nav-item dropdown">
+          <button
+            class="nav-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="menu-professional"
+          >
+            Professional Projects
+          </button>
+          <ul id="menu-professional" class="menu" role="menu">
+            <li role="none">
+              <a role="menuitem" href="./ww3.html">Supremacy: WW3</a>
+            </li>
+            <!-- Add more professional projects here -->
+            <!-- <li role="none"><a role="menuitem" href="./warhammer.html">Warhammer 40K: Supremacy</a></li> -->
+          </ul>
+        </div>
+
+        <div class="nav-item dropdown">
+          <button
+            class="nav-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="menu-personal"
+          >
+            Personal Projects
+          </button>
+          <ul id="menu-personal" class="menu" role="menu">
+            <li role="none">
+              <a role="menuitem" href="./wdcc.html"
+                >Wacky’s Dungeon Combat Club</a
+              >
+            </li>
+            <li role="none">
+              <a role="menuitem" href="./shattered.html"
+                >Shattered: Repair Your Identity</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div><a href="./about.html">About and Resume</a></div>
+      </nav>
+      <hr />
+    </section>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Main -->
+    <main id="main" class="container">
+      <!-- Profile / Hero -->
+      <section
+        class="about-container"
+        aria-labelledby="about-title"
+        style="margin-top: 24px"
+      >
+        <div class="profile-container">
+          <img
+            src="./assets/profile_picture.jpeg"
+            alt="Portrait of Mark Abdilla Mifsud"
+            class="profile-image"
+            width="250"
+            height="250"
+          />
+        </div>
+      </section>
+
+      <!-- Bio -->
+      <section
+        class="bio"
+        aria-labelledby="about-title"
+        style="margin-top: 16px"
+      >
+        <div class="card">
+          <h2 id="about-title">About</h2>
+          <p>
+            I design sustainable economies and disciplined live operations for
+            free-to-play strategy games. My work focuses on measurable impact:
+            payer conversion, direct-to-consumer revenue share, and retention
+            via systems and events players respect. I partner with UX/UI,
+            product, data, and community to ship changes that move KPIs without
+            resorting to pay-to-win.
+          </p>
+          <p>
+            Recent outcomes include a +37 percentage-point shift to DTC share
+            through a webshop redesign, a +5% lift in first-time payer
+            conversion via Starter Pack testing, and a 5× increase in alliance
+            participation by structuring competitive play.
+          </p>
+          <p>
+            I value clarity, reproducible processes, and readable artifacts
+            others can run with.
+          </p>
+        </div>
+      </section>
+
+      <!-- Expertise -->
+      <section class="section" aria-labelledby="expertise-title">
+        <div class="card">
+          <h2 id="expertise-title">Expertise</h2>
+          <p class="badge-row" role="list">
+            <span class="badge" role="listitem">Monetization Strategy</span>
+            <span class="badge" role="listitem">Live Ops</span>
+            <span class="badge" role="listitem">Economy Design</span>
+            <span class="badge" role="listitem">A/B Testing</span>
+            <span class="badge" role="listitem">Analytics</span>
+            <span class="badge" role="listitem">UX for Shops</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- Resume / Links -->
+      <section class="section" aria-labelledby="resume-title">
+        <div class="card">
+          <h2 id="resume-title">Resume & Links</h2>
+          <ul class="list">
+            <li>
+              <a href="./assets/Mark_Abdilla_Mifsud_Resume.pdf"
+                >Download Resume (PDF)</a
+              >
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/mark-abdilla/">LinkedIn</a>
+            </li>
+            <li><a href="https://github.com/MarkAbdillaMifsud">GitHub</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer container">
+      <hr />
+      <p>© Mark Abdilla Mifsud</p>
+      <p>All content and trademarks property of their respective owners.</p>
+    </footer>
+    <script src="./assets/js/theme.js" defer></script>
+  </body>
+</html>
