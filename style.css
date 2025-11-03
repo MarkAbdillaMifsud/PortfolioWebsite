@@ -107,6 +107,7 @@ hr {
     padding: 0;
     margin: 0;
     width: 100%;
+    gap: 12px;
     font-family: "Merriweather", Georgia, serif;
 }
 
@@ -115,6 +116,8 @@ hr {
     flex-direction: column;
     flex-wrap: wrap;
     flex-basis: 350px;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .name-container>h1 {
@@ -136,6 +139,8 @@ hr {
     align-items: center;
     gap: 24px;
     flex-basis: 50px;
+    flex: 0 0 auto;
+    align-self: flex-start;
 }
 
 .links-container>a>img,
@@ -177,6 +182,49 @@ hr {
 .nav-bar>div:hover>a {
     background-color: color-mix(in oklab, var(--accent) 12%, transparent);
     color: var(--fg-strong);
+}
+
+/* Normalize nav item alignment */
+.nav-item.dropdown {
+    padding-bottom: 0;
+}
+
+/* remove extra bottom padding causing droop */
+
+.nav-bar>div {
+    display: flex;
+    align-items: center;
+}
+
+/* Make anchors and dropdown buttons behave identically */
+.nav-bar a,
+.nav-trigger {
+    display: inline-flex;
+    /* same display mode */
+    align-items: center;
+    justify-content: center;
+    font: inherit;
+    line-height: 1.2;
+    /* shared line-height */
+    padding: 8px 12px;
+    /* identical padding */
+    border-radius: 8px;
+    vertical-align: middle;
+    /* baseline consistency when inline with others */
+}
+
+/* Keep hover/active visuals consistent */
+.nav-bar a:hover,
+.nav-bar a:focus-visible,
+.nav-trigger:hover,
+.nav-trigger:focus-visible {
+    background: color-mix(in oklab, var(--accent) 12%, transparent);
+    color: var(--fg-strong);
+    text-decoration: none;
+}
+
+.nav-trigger {
+    transform: translateY(-0.5px);
 }
 
 /* ===== Layout Utilities ===== */
@@ -558,7 +606,6 @@ hr {
 /* ===== Nav dropdowns ===== */
 .nav-item.dropdown {
     position: relative;
-    padding-bottom: 6px;
 }
 
 .nav-trigger {
@@ -661,5 +708,48 @@ hr {
 
     .gallery {
         grid-template-columns: 1fr;
+    }
+}
+
+/* === Header: mobile-only reposition of H2 (≤700px) === */
+@media (max-width: 500px) {
+    .heading-container {
+        position: relative;
+        align-items: flex-start;
+    }
+
+    .name-container {
+        flex: 1 1 auto;
+        min-width: 0;
+        flex-direction: column;
+    }
+
+    .name-container>h1 {
+        margin: 0 0 4px 0;
+        line-height: 1.1;
+    }
+
+    .name-container>h2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        font-size: .95rem;
+        color: var(--text-muted);
+        white-space: nowrap;
+        pointer-events: none;
+    }
+
+    .links-container {
+        align-self: flex-start;
+        margin-top: 40px;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .name-container>h2 {
+        white-space: normal;
+        max-width: 58vw;
     }
 }
