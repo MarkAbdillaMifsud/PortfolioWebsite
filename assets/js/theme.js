@@ -1,39 +1,45 @@
 (function () {
-  var KEY = 'theme';
-  var DOC = document.documentElement;
+  const root = document.documentElement;
+  const btn  = document.getElementById("themeToggle");
+  const mqLight = window.matchMedia("(prefers-color-scheme: light)");
+
+  function updateThemedIcons() {
+    const isLight = root.getAttribute("data-theme") === "light";
+    document.querySelectorAll("img[data-light][data-dark]").forEach(img => {
+      const target = isLight ? img.getAttribute("data-light")
+                             : img.getAttribute("data-dark");
+      if (img.getAttribute("src") !== target) img.setAttribute("src", target);
+    });
+  }
+
+  function setTheme(mode) {
+    if (mode === "light") {
+      root.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+    } else {
+      root.removeAttribute("data-theme"); // dark is default
+      localStorage.setItem("theme", "dark");
+    }
+    updateThemedIcons();
+    if (btn) btn.setAttribute("aria-pressed", mode === "light" ? "true" : "false");
+  }
 
   function getTheme() {
-    var saved = localStorage.getItem(KEY);
-    if (saved) return saved; // 'light' | 'dark'
-    // Fallback to system
-    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)
-      ? 'light' : 'dark';
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored;
+    return mqLight.matches ? "light" : "dark";
   }
 
-  function applyTheme(t) {
-    if (t === 'light') DOC.setAttribute('data-theme', 'light');
-    else DOC.removeAttribute('data-theme'); // dark = default tokens
-    localStorage.setItem(KEY, t);
-  }
-
-  // Initialize (after CSS; pre-init happens inline in <head>)
-  document.addEventListener('DOMContentLoaded', function () {
-    // Bind toggle
-    var btn = document.getElementById('themeToggle');
+  document.addEventListener("DOMContentLoaded", () => {
+    setTheme(getTheme());
     if (btn) {
-      btn.addEventListener('click', function () {
-        var next = DOC.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-        applyTheme(next);
+      btn.addEventListener("click", () => {
+        setTheme(getTheme() === "light" ? "dark" : "light");
       });
     }
+    // If user hasn’t explicitly chosen, follow OS changes live
+    mqLight.addEventListener?.("change", (e) => {
+      if (!localStorage.getItem("theme")) setTheme(e.matches ? "light" : "dark");
+    });
   });
-
-  // Expose minimal API for future tasks
-  window.Theme = {
-    get: getTheme,
-    set: applyTheme,
-    systemPrefersLight: function () {
-      return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    }
-  };
 })();
