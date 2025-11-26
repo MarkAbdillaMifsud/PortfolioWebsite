@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shattered — Case Study | Mark Abdilla Mifsud</title>
+    <meta
+      name="description"
+      content="Case study: Shattered — a narrative exploration game built in 48 hours for Global Game Jam 2020 (Theme: Repair). Roles: Game Design & Audio. Focus: environmental storytelling, tension through sound."
+    />
+    <meta property="og:title" content="Shattered — Case Study | Mark Abdilla Mifsud" />
+    <meta property="og:description" content="Global Game Jam 2020 project. Narrative design, exploration, and audio craft around the theme ‘Repair’." />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="./assets/shattered_og.jpg" />
+    <meta name="theme-color" content="#121212" />
+
+    <!-- Preload hero image -->
+    <link rel="preload" href="./assets/shattered1.webp" as="image" imagesrcset="./assets/shattered1.webp 1x" />
+
+    <link rel="icon" href="./assets/favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (!t && window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+          document.documentElement.setAttribute("data-theme", "light");
+        } else if (t === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="top-bar" class="container">
+      <div class="heading-container">
+        <div class="name-container">
+          <h1>Mark Abdilla Mifsud</h1>
+          <h2>Principal Monetization Manager and Game Designer</h2>
+        </div>
+        <div class="links-container" aria-label="External links">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+            <span class="theme-toggle__icon" aria-hidden="true"></span>
+            <span class="sr-only">Toggle theme</span>
+          </button>
+          <a href="https://github.com/MarkAbdillaMifsud/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <img
+              id="githubIcon"
+              src="./assets/github_darkmode.png"
+              data-dark="./assets/github_darkmode.png"
+              data-light="./assets/github_lightmode.png"
+              alt="GitHub"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/mark-abdilla/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="./assets/Linkedin.png" alt="LinkedIn" />
+          </a>
+          <a href="./assets/Mark_Abdilla_Mifsud_Resume.pdf" aria-label="Résumé PDF" target="_blank" rel="noopener">
+            <img src="./assets/PDF.png" alt="Résumé (PDF)" />
+          </a>
+        </div>
+      </div>
+      <hr />
+      <a class="skip-link" href="#main">Skip to content</a>
+      <nav class="nav-bar" aria-label="Primary">
+        <div><a href="./index.html">Home</a></div>
+
+        <div class="nav-item dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-professional">
+            Professional Projects
+          </button>
+          <ul id="menu-professional" class="menu" role="menu">
+            <li role="none"><a role="menuitem" href="./whs.html">Supremacy: World War 3</a></li>
+            <li role="none"><a role="menuitem" href="./whs.html">Warhammer 40K: Supremacy</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-item dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-personal">
+            Personal Projects
+          </button>
+          <ul id="menu-personal" class="menu" role="menu">
+            <li role="none"><a role="menuitem" href="./wdcc.html">Wacky’s Dungeon Combat Club</a></li>
+            <li role="none"><a role="menuitem" href="./shattered.html" aria-current="page">Shattered</a></li>
+          </ul>
+        </div>
+
+        <div><a href="./about.html">About and Resume</a></div>
+      </nav>
+      <hr />
+    </header>
+
+    <main class="container" id="main">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="./index.html">Home</a> /
+        <a href="./personal.html">Personal</a> /
+        <span aria-current="page">Shattered</span>
+      </nav>
+
+      <!-- HERO -->
+      <section class="project-hero">
+        <div>
+          <p class="badge">Narrative Design • Exploration • Audio Design</p>
+          <h1>Shattered: Repair Your Identity</h1>
+          <p class="lead">
+            A narrative exploration prototype built for Global Game Jam 2020 (Theme: <em>Repair</em>). The player wakes in an empty house with no
+            recollection of self. By exploring rooms, recovering fragments, and listening for audio cues, they reconstruct who they were — and who they
+            might become.
+          </p>
+          <div class="badge-row" role="list" aria-label="Tags">
+            <span class="badge" role="listitem">Narrative Design</span>
+            <span class="badge" role="listitem">Environmental Storytelling</span>
+            <span class="badge" role="listitem">Exploration</span>
+            <span class="badge" role="listitem">Audio Design</span>
+          </div>
+        </div>
+        <aside class="meta" aria-labelledby="project-meta">
+          <h2 id="project-meta" class="sr-only">Project metadata</h2>
+          <dl>
+            <dt>Role</dt>
+            <dd>Game Designer, Writer, Audio Designer</dd>
+            <dt>Jam</dt>
+            <dd>Global Game Jam 2020 — Theme: “Repair”</dd>
+            <dt>Timeframe</dt>
+            <dd>48 hours</dd>
+            <dt>Scope</dt>
+            <dd>Narrative structure, room/fragment system, audio tension & stingers</dd>
+            <dt>Tech</dt>
+            <dd>Unity, Audacity</dd>
+            <dt>Link</dt>
+            <dd>
+              <a href="https://v3.globalgamejam.org/2020/games/project-seven-0" target="_blank" rel="noopener">GGJ Submission Page</a>
+            </dd>
+          </dl>
+        </aside>
+      </section>
+
+      <!-- CONTEXT / GOALS -->
+      <section class="two-col section">
+        <div class="card">
+          <h2>Context</h2>
+          <ul class="list">
+            <li>Jam constraints: 48h build, theme-driven (“Repair”), minimal assets.</li>
+            <li>Goal to test environmental storytelling without heavy UI or VO.</li>
+            <li>Solo audio pipeline using Audacity; quick iteration on loops and stingers.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Goals</h2>
+          <ul class="list">
+            <li>Deliver a coherent loop: explore → find fragment → unlock memory → progress.</li>
+            <li>Use sound to create tension and orientation without jump scares.</li>
+            <li>Ship a playable slice with a beginning, midpoint reveal, and resolution.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- APPROACH / RESPONSIBILITIES -->
+      <section class="two-col section">
+        <div class="card">
+          <h2>Approach</h2>
+          <ul class="list">
+            <li>Spatial storytelling via room semantics (kitchen, study, bedroom) tied to identity facets.</li>
+            <li>Collectible “fragments” populate a timeline; each fragment unlocks a short prose memory.</li>
+            <li>Audio layers: base ambience, proximity hum for interactables, one-shot stingers for reveals.</li>
+            <li>Low-contrast UI; interaction affordances handled in-world to avoid HUD clutter.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Responsibilities</h2>
+          <ul class="list">
+            <li>Narrative beats and scene sequencing.</li>
+            <li>Interaction rules and exploration pacing.</li>
+            <li>Sound design: ambience beds, foley, stingers; mix and attenuation curves.</li>
+            <li>Playtest loops and tuning under jam constraints.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SYSTEMS -->
+      <section class="section">
+        <h2>System Designs</h2>
+        <div class="two-col">
+          <div class="card">
+            <h3>Fragments & Rooms</h3>
+            <ul class="list">
+              <li>Each room gates 1–2 fragments with light spatial puzzles.</li>
+              <li>Fragments unlock micro-memories; three aligned memories unlock a new area.</li>
+              <li>Endgame “mirror” scene replays key audio motifs to resolve the arc.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Audio as Guidance</h3>
+            <ul class="list">
+              <li>Proximity cue increases in volume and stereo width near interactables.</li>
+              <li>Minor-key stingers reserved for narrative reveals to avoid cue fatigue.</li>
+              <li>Dynamic low-pass when reading memories to focus attention.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="section">
+        <h2>Gallery</h2>
+        <div class="gallery" role="list">
+          <figure role="listitem">
+            <img src="./assets/shattered1.png" alt="Entrance hallway with scattered notes and a dim lamp" />
+            <figcaption class="sr-only">Entrance hallway</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="./assets/shattered2.png" alt="Bedroom scene where a memory fragment glows beside a nightstand" />
+            <figcaption class="sr-only">Bedroom fragment</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="./assets/shattered3.png" alt="Study room puzzle with books and a highlighted ledger" />
+            <figcaption class="sr-only">Study puzzle</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="./assets/shattered4.png" alt="Mirror room used for the finale and identity reveal" />
+            <figcaption class="sr-only">Mirror finale</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- IMPACT / NEXT -->
+      <section class="two-col section">
+        <div class="card">
+          <h2>Outcome</h2>
+          <ul class="list">
+            <li>Submitted a complete vertical slice with start–finish arc within jam time.</li>
+            <li>Playtests confirmed audio cues reduced aimless wandering and improved flow.</li>
+            <li>Post-jam interest to expand into branching memories and alternate endings.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Next Steps</h2>
+          <ul class="list">
+            <li>Branching memory graph with soft locks and optional fragments.</li>
+            <li>Diegetic map journal to track discovered facets of identity.</li>
+            <li>Expanded sound palette with adaptive reverb by room size/materials.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CREDITS -->
+      <section class="section credits">
+        <p>Built during Global Game Jam 2020. Roles listed above reflect my contributions.</p>
+      </section>
+
+      <!-- FOOT NAV -->
+      <nav class="proj-foot-nav" aria-label="Project navigation">
+        <a href="./wdcc.html" rel="next">Next →</a>
+      </nav>
+    </main>
+
+    <footer class="container footer">
+      <hr />
+      <p>© Mark Abdilla Mifsud</p>
+      <p>All content and trademarks property of their respective owners.</p>
+    </footer>
+
+    <!-- Minimal JS to support dropdown accessibility and icon theming -->
+    <script>
+      // Dropdowns
+      document.querySelectorAll(".nav-trigger").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const expanded = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", String(!expanded));
+          const menu = document.getElementById(btn.getAttribute("aria-controls"));
+          menu.classList.toggle("open", !expanded);
+        });
+      });
+
+      // Theme icon swap
+      const icon = document.getElementById("githubIcon");
+      const toggle = document.getElementById("themeToggle");
+      function applyIcon() {
+        const isLight = document.documentElement.getAttribute("data-theme") === "light";
+        if (icon && icon.dataset.light && icon.dataset.dark) {
+          icon.src = isLight ? icon.dataset.light : icon.dataset.dark;
+        }
+      }
+      applyIcon();
+      toggle?.addEventListener("click", () => {
+        const isLight = document.documentElement.getAttribute("data-theme") === "light";
+        const next = isLight ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+        applyIcon();
+      });
+    </script>
+    <script src="./assets/js/theme.js" defer></script>
+  </body>
+</html>
