@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Source: Machinations assignment for mechanics/balance design :contentReference[oaicite:0]{index=0} -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Machinations Crafting Economy — Case Study | Mark Abdilla Mifsud</title>
+    <meta
+      name="description"
+      content="Personal project: systems design and difficulty progression using Machinations. Loot→crafting economy with gold, legendary items, efficiency upgrades, risk-based crafting, item quality tiers, overproduction penalties, and a dynamic market."
+    />
+    <meta property="og:title" content="Machinations Crafting Economy — Case Study" />
+    <meta property="og:description" content="Systems & balance design: crafting economy, risk, rarity, and market regulation built in Machinations." />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="./assets/placeholder_og.jpg" />
+    <meta name="theme-color" content="#121212" />
+
+    <link rel="preload" href="./assets/profile_picture.jpeg" as="image" imagesrcset="./assets/profile_picture.jpeg 1x" />
+    <link rel="icon" href="./assets/favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (!t && window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+          document.documentElement.setAttribute("data-theme", "light");
+        } else if (t === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header id="top-bar" class="container">
+      <div class="heading-container">
+        <div class="name-container">
+          <h1>Mark Abdilla Mifsud</h1>
+          <h2>Principal Monetization Manager and Game Designer</h2>
+        </div>
+        <div class="links-container" aria-label="External links">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+            <span class="theme-toggle__icon" aria-hidden="true"></span>
+            <span class="sr-only">Toggle theme</span>
+          </button>
+          <a href="https://github.com/MarkAbdillaMifsud/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <img
+              id="githubIcon"
+              src="./assets/github_darkmode.png"
+              data-dark="./assets/github_darkmode.png"
+              data-light="./assets/github_lightmode.png"
+              alt="GitHub"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/mark-abdilla/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="./assets/Linkedin.png" alt="LinkedIn" />
+          </a>
+          <a href="./assets/Mark_Abdilla_Mifsud_Resume.pdf" aria-label="Résumé PDF" target="_blank" rel="noopener">
+            <img src="./assets/PDF.png" alt="Résumé (PDF)" />
+          </a>
+        </div>
+      </div>
+      <hr />
+      <a class="skip-link" href="#main">Skip to content</a>
+      <nav class="nav-bar" aria-label="Primary">
+        <div><a href="./index.html">Home</a></div>
+
+        <div class="nav-item dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-professional">
+            Professional Projects
+          </button>
+          <ul id="menu-professional" class="menu" role="menu">
+            <li role="none"><a role="menuitem" href="./ww3.html">Supremacy: WW3</a></li>
+            <li role="none"><a role="menuitem" href="./whs.html">Warhammer 40K: Supremacy</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-item dropdown">
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-personal">
+            Personal Projects
+          </button>
+          <ul id="menu-personal" class="menu" role="menu">
+            <li role="none"><a role="menuitem" href="./wdcc.html">Wacky’s Dungeon Combat Club</a></li>
+            <li role="none"><a role="menuitem" href="./shattered.html">Shattered: Repair Your Identity</a></li>
+            <li role="none"><a role="menuitem" href="./machinations.html" aria-current="page">Machinations Crafting Economy</a></li>
+          </ul>
+        </div>
+
+        <div><a href="./about.html">About and Resume</a></div>
+      </nav>
+      <hr />
+    </header>
+
+    <main class="container" id="main">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="./index.html">Home</a> /
+        <a href="./personal.html">Personal</a> /
+        <span aria-current="page">Machinations Crafting Economy</span>
+      </nav>
+
+      <!-- HERO -->
+      <section class="project-hero">
+        <div>
+          <p class="badge">Systems Design • Machinations • Balance • Difficulty</p>
+          <h1>Machinations Crafting Economy</h1>
+          <p class="lead">
+            A loot→crafting economy prototyped in Machinations, then extended with gold sinks/sources, rarity & quality tiers, risk-based crafting,
+            efficiency upgrades, inventory caps, and a dynamic market that reacts to stockpiling.
+          </p>
+          <div class="badge-row" role="list" aria-label="Tags">
+            <span class="badge" role="listitem">Economy Design</span>
+            <span class="badge" role="listitem">Progression</span>
+            <span class="badge" role="listitem">Simulation</span>
+            <span class="badge" role="listitem">Tuning</span>
+          </div>
+        </div>
+        <aside class="meta" aria-labelledby="project-meta">
+          <h2 id="project-meta" class="sr-only">Project metadata</h2>
+          <dl>
+            <dt>Role</dt>
+            <dd>Systems Designer</dd>
+            <dt>Timeline</dt>
+            <dd>Apr 2025</dd>
+            <dt>Tools</dt>
+            <dd>Machinations</dd>
+            <dt>Link</dt>
+            <dd>
+              <a href="https://my.machinations.io/d/sm4659---2025-coursework-2/678c04f90d6611f0abac028ecffc1261" target="_blank" rel="noopener">
+                Final Diagram
+              </a>
+            </dd>
+          </dl>
+        </aside>
+      </section>
+
+      <!-- OVERVIEW -->
+      <section class="two-col section">
+        <div class="card">
+          <h2>Base Loop</h2>
+          <ul class="list">
+            <li>Loot source feeds a rarity gate into <em>Common</em> and <em>Rare</em> pools.</li>
+            <li>Craft consumes <strong>3× Common + 1× Rare</strong> to create an <em>Item</em>.</li>
+            <li>With gold added: loot also yields <strong>d6 gold</strong>; craft costs <strong>20 gold</strong>; selling an item returns <strong>15 gold</strong>. :contentReference[oaicite:1]{index=1}</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Early Balance Checks</h2>
+          <ul class="list">
+            <li>20-step prediction: median <strong>Items=16</strong>, <strong>Gold=19</strong>.</li>
+            <li>100-step prediction: median <strong>Items=17</strong>, <strong>Gold=14</strong>. :contentReference[oaicite:2]{index=2}</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- MECHANICS -->
+      <section class="section">
+        <h2>Difficulty & Depth Additions</h2>
+        <div class="two-col">
+          <div class="card">
+            <h3>Legendary Drop (Luck)</h3>
+            <ul class="list">
+              <li>Legendary pool at <strong>5%</strong>; Rare adjusted to <strong>35%</strong>.</li>
+              <li>Special craft: <strong>3× Rare + 1× Legendary + 35 gold</strong>; sell for <strong>25 gold</strong>. :contentReference[oaicite:3]{index=3}</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Efficiency Upgrade (Progression)</h3>
+            <ul class="list">
+              <li>Spend <strong>40 gold</strong> per level (max <strong>2</strong>).</li>
+              <li>Each level: −1 Common requirement; −5 gold craft cost (minimum 1 Common required). :contentReference[oaicite:4]{index=4}</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Player Choice: Risk Craft</h3>
+            <ul class="list">
+              <li>Alternative craft: <strong>2× Common + 1× Rare + 15 gold</strong> with <strong>50%</strong> success.</li>
+              <li>Standard craft increased to <strong>5× Common + 2× Rare</strong> to justify risk. :contentReference[oaicite:5]{index=5}</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Item Quality Tiers</h3>
+            <ul class="list">
+              <li>Craft outcomes: <strong>60% Common</strong>, <strong>35% Rare</strong>, <strong>15% Legendary</strong>.</li>
+              <li>Sell values: <strong>15 / 25 / 50 gold</strong> respectively. :contentReference[oaicite:6]{index=6}</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Overproduction Penalties</h3>
+            <ul class="list">
+              <li>Caps: Common <strong>5</strong>, Rare <strong>10</strong>, Gold <strong>50</strong>.</li>
+              <li>Drains: −1 Common, −1 Rare, −25 Gold when caps are exceeded. :contentReference[oaicite:7]{index=7}</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- INNOVATION -->
+      <section class="two-col section">
+        <div class="card">
+          <h2>Dynamic Market Economy</h2>
+          <ul class="list">
+            <li><strong>Dynamic Loot</strong>: gold from loot scales as <code>d6*(20/(Gold+20))</code> → diminishing returns with stockpiling.</li>
+            <li><strong>CommonValue / RareValue</strong>: required inputs rise with pool size (min 2C/1R). </li>
+            <li><strong>MarketPrice</strong>: selling price decreases as crafted supply grows. :contentReference[oaicite:8]{index=8}</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Simulation Notes</h2>
+          <ul class="list">
+            <li>100-step run (manual sell): means — Items <strong>4.96</strong> (max 8), Common <strong>12.13</strong> (max 18), Rare <strong>5.65</strong> (max 9), Gold <strong>11.36</strong> (max 21).</li>
+            <li>Auto-sell enabled: Gold mean rises to <strong>38.35</strong> (max 56). :contentReference[oaicite:9]{index=9}</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- GALLERY (placeholders; diagrams described in the PDF on pp. 3–12) -->
+      <section class="section">
+        <h2>Gallery</h2>
+        <div class="gallery" role="list">
+          <figure role="listitem">
+            <img src="./assets/placeholder1.webp" alt="Base loop: loot → rarity gate → common/rare → craft → item" />
+            <figcaption class="sr-only">Base loop (see diagram p.3). :contentReference[oaicite:10]{index=10}</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="./assets/placeholder2.webp" alt="Gold layer with sell converter and craft cost" />
+            <figcaption class="sr-only">Gold layer (p.4). :contentReference[oaicite:11]{index=11}</figcaption>
+          </figure>
+          <figure role="listitem">
+            <img src="./assets/placeholder3.webp" alt="Dynamic market registers affecting costs and prices" />
+            <figcaption class="sr-only">Dynamic market (p.12). :contentReference[oaicite:12]{index=12}</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- FOOT NAV -->
+      <nav class="proj-foot-nav" aria-label="Project navigation">
+        <a href="./shattered.html" rel="prev">← Previous</a>
+        <a href="./ww3.html" rel="next">Next →</a>
+      </nav>
+    </main>
+
+    <footer class="container footer">
+      <hr />
+      <p>© Mark Abdilla Mifsud</p>
+      <p>All content and trademarks property of their respective owners.</p>
+    </footer>
+
+    <!-- Minimal JS for dropdowns + theme icon swap -->
+    <script>
+      document.querySelectorAll(".nav-trigger").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const expanded = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", String(!expanded));
+          const menu = document.getElementById(btn.getAttribute("aria-controls"));
+          menu.classList.toggle("open", !expanded);
+        });
+      });
+
+      const icon = document.getElementById("githubIcon");
+      const toggle = document.getElementById("themeToggle");
+      function applyIcon() {
+        const isLight = document.documentElement.getAttribute("data-theme") === "light";
+        if (icon && icon.dataset.light && icon.dataset.dark) {
+          icon.src = isLight ? icon.dataset.light : icon.dataset.dark;
+        }
+      }
+      applyIcon();
+      toggle?.addEventListener("click", () => {
+        const isLight = document.documentElement.getAttribute("data-theme") === "light";
+        const next = isLight ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+        applyIcon();
+      });
+    </script>
+    <script src="./assets/js/theme.js" defer></script>
+  </body>
+</html>
