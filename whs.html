@@ -3,35 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Warhammer 40K: Supremacy – Case Study | Mark Abdilla Mifsud</title>
+    <title>Warhammer 40K: Supremacy — Work in Progress | Mark Abdilla Mifsud</title>
     <meta
       name="description"
-      content="Case study: Monetization Strategy for Launch, Sales Strategies and Structured A/B Testing
-      />
-    <link
-      rel="preload"
-      href="./assets/profile_picture.jpeg"
-      as="image"
-      imagesrcset="./assets/profile_picture.jpeg 1x"
+      content="Work-in-progress case study: Monetization strategy for launch, sales strategy, and structured A/B testing for Warhammer 40K: Supremacy. Status: In development. Target launch: Q2 2026."
     />
+    <meta property="og:title" content="Warhammer 40K: Supremacy — Work in Progress" />
+    <meta property="og:description" content="Monetization & launch planning in progress. Target launch: Q2 2026." />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="./assets/placeholder_og.jpg" />
+    <meta name="theme-color" content="#121212" />
+    <link rel="preload" href="./assets/profile_picture.jpeg" as="image" imagesrcset="./assets/profile_picture.jpeg 1x" />
+    <link rel="icon" href="./assets/favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
     <script>
       (function () {
         var t = localStorage.getItem("theme");
-        if (
-          !t &&
-          window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: light)").matches
-        ) {
+        if (!t && window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
           document.documentElement.setAttribute("data-theme", "light");
         } else if (t === "light") {
           document.documentElement.setAttribute("data-theme", "light");
         }
       })();
     </script>
-    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <!-- Header (reuse existing #top-bar markup if you keep it common) -->
     <header id="top-bar" class="container">
       <div class="heading-container">
         <div class="name-container">
@@ -39,78 +35,49 @@
           <h2>Principal Monetization Manager and Game Designer</h2>
         </div>
         <div class="links-container" aria-label="External links">
-          <button
-            id="themeToggle"
-            class="theme-toggle"
-            aria-label="Toggle light/dark mode"
-            title="Toggle theme"
-          >
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
             <span class="theme-toggle__icon" aria-hidden="true"></span>
             <span class="sr-only">Toggle theme</span>
           </button>
-          <a href="https://github.com/MarkAbdillaMifsud/">
+          <a href="https://github.com/MarkAbdillaMifsud/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <img
               id="githubIcon"
               src="./assets/github_darkmode.png"
               data-dark="./assets/github_darkmode.png"
               data-light="./assets/github_lightmode.png"
-              alt="GitHub Logo"
+              alt="GitHub"
             />
           </a>
-          <a href="https://www.linkedin.com/in/mark-abdilla/"
-            ><img src="./assets/Linkedin.png" alt="LinkedIn"
-          /></a>
-          <a href="./assets/Mark_Abdilla_Mifsud_Resume.pdf"
-            ><img src="./assets/PDF.png" alt="Resume PDF"
-          /></a>
+          <a href="https://www.linkedin.com/in/mark-abdilla/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="./assets/Linkedin.png" alt="LinkedIn" />
+          </a>
+          <a href="./assets/Mark_Abdilla_Mifsud_Resume.pdf" aria-label="Résumé PDF" target="_blank" rel="noopener">
+            <img src="./assets/PDF.png" alt="Résumé (PDF)" />
+          </a>
         </div>
       </div>
       <hr />
       <a class="skip-link" href="#main">Skip to content</a>
       <nav class="nav-bar" aria-label="Primary">
         <div><a href="./index.html">Home</a></div>
-
         <div class="nav-item dropdown">
-          <button
-            class="nav-trigger"
-            aria-haspopup="true"
-            aria-expanded="false"
-            aria-controls="menu-professional"
-          >
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-professional">
             Professional Projects
           </button>
           <ul id="menu-professional" class="menu" role="menu">
-            <li role="none">
-              <a role="menuitem" href="./ww3.html">Supremacy: WW3</a>
-            </li>
-            <!-- Add more professional projects here -->
-            <!-- <li role="none"><a role="menuitem" href="./warhammer.html">Warhammer 40K: Supremacy</a></li> -->
+            <li role="none"><a role="menuitem" href="./ww3.html">Supremacy: WW3</a></li>
+            <li role="none"><a role="menuitem" href="./whs.html" aria-current="page">Warhammer 40K: Supremacy</a></li>
           </ul>
         </div>
-
         <div class="nav-item dropdown">
-          <button
-            class="nav-trigger"
-            aria-haspopup="true"
-            aria-expanded="false"
-            aria-controls="menu-personal"
-          >
+          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-personal">
             Personal Projects
           </button>
           <ul id="menu-personal" class="menu" role="menu">
-            <li role="none">
-              <a role="menuitem" href="./wdcc.html"
-                >Wacky’s Dungeon Combat Club</a
-              >
-            </li>
-            <li role="none">
-              <a role="menuitem" href="./shattered.html"
-                >Shattered: Repair Your Identity</a
-              >
-            </li>
+            <li role="none"><a role="menuitem" href="./wdcc.html">Wacky’s Dungeon Combat Club</a></li>
+            <li role="none"><a role="menuitem" href="./shattered.html">Shattered: Repair Your Identity</a></li>
           </ul>
         </div>
-
         <div><a href="./about.html">About and Resume</a></div>
       </nav>
       <hr />
@@ -120,19 +87,24 @@
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="./index.html">Home</a> /
         <a href="./professional.html">Professional</a> /
-        <span aria-current="page">Supremacy: WW3</span>
+        <span aria-current="page">Warhammer 40K: Supremacy</span>
       </nav>
+
+      <!-- STATUS BANNER -->
+      <section class="status-banner" role="status" aria-live="polite">
+        <p class="badge">In Development</p>
+        <p><strong>Target Launch:</strong> 2026</p>
+        <p><strong>Note:</strong> Dates and content are subject to change. No unreleased IP or confidential assets are shown.</p>
+      </section>
 
       <!-- HERO -->
       <section class="project-hero">
         <div>
           <p class="badge">Monetization • A/B Testing • Launch Strategy • Data Analysis</p>
-          <h1>Warhammer 40K: Supremacy — Monetization & Launch</h1>
+          <h1>Warhammer 40K: Supremacy — Monetization & Launch (WIP)</h1>
           <p class="lead">
-            Established a comprehensive monetization strategy for the launch of the title, based on
-            best practices and lessons learned from other titles forming part of the 
-            Supremacy Franchise. This also involved establishing an A/B testing framework to
-            gather data on user behaviour, preferred price points and ingame engagement.
+            Work-in-progress planning for launch monetization, sales rhythms, and test plans informed by learnings across the Supremacy franchise.
+            Focus areas: first-time payer journeys, recurring value ladders, and lore-aligned offer structures.
           </p>
           <div class="badge-row" role="list" aria-label="Tags">
             <span class="badge" role="listitem">F2P</span>
@@ -150,157 +122,138 @@
             <dd>Principal Monetization Manager</dd>
             <dt>Company</dt>
             <dd>Twin Harbour Interactive</dd>
+            <dt>Status</dt>
+            <dd>Active — In development</dd>
             <dt>Timeline</dt>
-            <dd>2025– present</dd>
+            <dd>2025–2026</dd>
             <dt>Scope</dt>
-            <dd>Long-Term Strategy, A/B Testing, Data Analysis</dd>
-            <dt>Outcomes</dt>
-            <dd>
-              Coming Soon • Coming Soon • Coming Soon
-            </dd>
+            <dd>Monetization strategy, sales/calendar design, A/B test plan, analytics instrumentation</dd>
           </dl>
         </aside>
       </section>
 
-      <!-- KPIs -->
-      <section class="kpi-grid" aria-label="Key metrics">
+      <!-- KPI TARGETS (NOT FINAL RESULTS) -->
+      <section class="kpi-grid" aria-label="Target metrics">
         <div class="kpi">
-          <div class="value">NaN</div>
-          <div class="label">Coming Soon</div>
+          <div class="value">TBD</div>
+          <div class="label">FTP → Payer Conversion Target</div>
         </div>
         <div class="kpi">
-          <div class="value">NaN</div>
-          <div class="label">Coming Soon</div>
+          <div class="value">TBD</div>
+          <div class="label">DTC Revenue Mix Target</div>
         </div>
         <div class="kpi">
-          <div class="value">NaN</div>
-          <div class="label">Coming Soon</div>
+          <div class="value">TBD</div>
+          <div class="label">Retention Uplift Target</div>
         </div>
       </section>
 
-      <!-- SUMMARY / PROBLEM → APPROACH → RESULT -->
+      <!-- CONTEXT / GOALS -->
       <section class="two-col section">
         <div class="card">
           <h2>Context</h2>
           <ul class="list">
-            <li>
-              Joined the team late in production to flesh out monetization processes and strategic approach.
-            </li>
-            <li>
-              Lack of a cohesive plan on how to monetize the title while balancing this with fun game design.
-            </li>
+            <li>Joined late in production to formalize monetization and test strategy.</li>
+            <li>Requirement: lore-respectful systems and offers for Warhammer 40K.</li>
+            <li>Constraint: maintain fairness perception; avoid P2W escalation.</li>
           </ul>
         </div>
         <div class="card">
           <h2>Goals</h2>
           <ul class="list">
-            <li>Ensure population of shop with adequate offers and bundles.</li>
-            <li>Establish a clear flow for player first-time pay conversion.</li>
-            <li>
-              Assist Game Design Team with ensuring offers and events are monetizable and in keeping with Warhammer lore.
-            </li>
+            <li>Populate launch shop with coherent value ladders and bundles.</li>
+            <li>Define first- and second-payment journeys with clear triggers.</li>
+            <li>Ship A/B framework for price points, bundles, and sales rhythms.</li>
           </ul>
         </div>
       </section>
 
+      <!-- APPROACH / RESPONSIBILITIES -->
       <section class="two-col section">
         <div class="card">
-          <h2>My Approach</h2>
+          <h2>Approach</h2>
           <ul class="list">
-            <li>
-              Utilise Supremacy 1914 monetization approach to make entry curve less daunting.
-            </li>
-            <li>
-              Provide adeqaute opportunities for players to monetize through Premium Currency, Subscriptions and Faction Units.
-            </li>
-            <li>
-              Establish a series of Starter Packs, aimed at ensuring adequate first and second payment flows.
-            </li>
-            <li>
-              Cohesive Sales Strategy to ensure better monetization on event days.
-            </li>
+            <li>Adapt Supremacy 1914/WW3 learnings to reduce early-game friction.</li>
+            <li>Offer architecture: premium currency, subscription, faction-themed units.</li>
+            <li>Starter Pack ladder: timed entry offer → follow-up conversion → ramp.</li>
+            <li>Sales calendar: anchor beats, decoy tiers, and event-aligned bundles.</li>
           </ul>
         </div>
         <div class="card">
           <h2>Responsibilities</h2>
           <ul class="list">
             <li>Monetization strategy and A/B test design.</li>
-            <li>Entry point sales strategy to allow tiered payclass progression.</li>
-            <li>Coordinate lore loyal systems and approaches for monetization.</li>
-            <li>Data Analysis and adopting findings to iterate on designs.</li>
+            <li>Entry sales strategy for tiered pay-class progression.</li>
+            <li>Coordinate lore-loyal monetization with design and licensors.</li>
+            <li>Analytics review and iteration planning.</li>
           </ul>
         </div>
       </section>
 
-      <!-- SYSTEMS -->
+      <!-- SYSTEMS (HIGH-LEVEL, NO CONFIDENTIALS) -->
       <section class="section">
-        <h2>System Designs</h2>
+        <h2>System Designs (High-Level)</h2>
         <div class="two-col">
           <div class="card">
             <h3>Shop Design</h3>
             <ul class="list">
-              <li>Introduced a launch shop for mobile and desktop.</li>
-              <li>
-                Establish a Starter Pack and follow-up Faction Packs.
-              </li>
-              <li>
-                Drove DTC store strategy to ensure adequate revenue share subject to less fees.
-              </li>
+              <li>Launch shop plan for desktop and mobile footprints.</li>
+              <li>Starter Pack → faction follow-ups → subscription surfacing.</li>
+              <li>DTC channel planning to improve fee efficiency.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Testing Plan</h3>
+            <ul class="list">
+              <li>Price point ladders and decoy anchoring tests.</li>
+              <li>Bundle composition and art/copy creative tests.</li>
+              <li>Event-day multipliers and cadence experiments.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- GALLERY (replace with real images) -->
+      <!-- GALLERY (USE PLACEHOLDERS ONLY) -->
       <section class="section">
         <h2>Gallery</h2>
+        <p class="note">Placeholder imagery only. No unreleased IP displayed.</p>
         <div class="gallery" role="list">
           <figure role="listitem">
-            <img src="./assets/ww3.jpg" alt="WW3 key art" />
-            <figcaption class="sr-only">Key art</figcaption>
-          </figure>
-          <figure role="listitem">
-            <img src="./assets/WW3_Seasons.png" alt="Shop redesign mock" />
-            <figcaption class="sr-only">Shop mock</figcaption>
-          </figure>
-          <figure role="listitem">
-            <img src="./assets/world_map.jpg" alt="Season mission preview" />
-            <figcaption class="sr-only">Season missions</figcaption>
+            <img src="./assets/wh-poster.png" alt="Placeholder image for shop wireframe" />
+            <figcaption class="sr-only">Shop wireframe placeholder</figcaption>
           </figure>
         </div>
       </section>
 
-      <!-- IMPACT / RETROSPECTIVE -->
+      <!-- STATUS / NEXT -->
       <section class="two-col section">
         <div class="card">
-          <h2>Impact</h2>
+          <h2>Current Status</h2>
           <ul class="list">
-            <li>
-             Coming Soon
-            </li>
+            <li>Monetization pillars defined; offer ladders in draft.</li>
+            <li>A/B framework scoped; instrumentation requirements outlined.</li>
+            <li>Sales/calendar beats mapped to production milestones.</li>
           </ul>
         </div>
         <div class="card">
-          <h2>What I’d Tackle Next</h2>
+          <h2>Next Steps</h2>
           <ul class="list">
-            <li>
-             Coming Soon
-            </li>
+            <li>Lock initial price tiers and bundles for pre-launch testing.</li>
+            <li>Finalize analytics taxonomy and dashboards.</li>
+            <li>Prepare launch-window promotions and DTC alignment.</li>
           </ul>
         </div>
       </section>
 
       <!-- CREDITS -->
       <section class="section credits">
-        <p>
-          Credits: Monetization, Product, Data, Game Design teams at Twin Harbour Interactive, in collaboration with New Moon Productions.
-        </p>
+        <p>Credits: Monetization, Product, Data, and Game Design teams at Twin Harbour Interactive; collaboration with New Moon Productions.</p>
       </section>
 
-      <!-- FOOT NAV BETWEEN PROJECTS -->
+      <!-- FOOT NAV -->
       <nav class="proj-foot-nav" aria-label="Project navigation">
         <a href="./ww3.html" rel="prev">← Previous</a>
-        <a href="./next-project.html" rel="next">Next →</a>
+        <a href="./shattered.html" rel="next">Next →</a>
       </nav>
     </main>
 
@@ -309,6 +262,35 @@
       <p>© Mark Abdilla Mifsud</p>
       <p>All content and trademarks property of their respective owners.</p>
     </footer>
+
+    <!-- Minimal JS for dropdowns and theme icon swap -->
+    <script>
+      document.querySelectorAll(".nav-trigger").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const expanded = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", String(!expanded));
+          const menu = document.getElementById(btn.getAttribute("aria-controls"));
+          menu.classList.toggle("open", !expanded);
+        });
+      });
+
+      const icon = document.getElementById("githubIcon");
+      const toggle = document.getElementById("themeToggle");
+      function applyIcon() {
+        const isLight = document.documentElement.getAttribute("data-theme") === "light";
+        if (icon && icon.dataset.light && icon.dataset.dark) {
+          icon.src = isLight ? icon.dataset.light : icon.dataset.dark;
+        }
+      }
+      applyIcon();
+      toggle?.addEventListener("click", () => {
+        const isLight = document.documentElement.getAttribute("data-theme") === "light";
+        const next = isLight ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+        applyIcon();
+      });
+    </script>
     <script src="./assets/js/theme.js" defer></script>
   </body>
 </html>
