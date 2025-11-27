@@ -12,7 +12,7 @@
     <meta property="og:title" content="Machinations Crafting Economy — Case Study" />
     <meta property="og:description" content="Systems & balance design: crafting economy, risk, rarity, and market regulation built in Machinations." />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="./assets/placeholder_og.jpg" />
+    <meta property="og:image" content="./assets/placeholder_og.jpg"/>
     <meta name="theme-color" content="#121212" />
 
     <link rel="preload" href="./assets/profile_picture.jpeg" as="image" imagesrcset="./assets/profile_picture.jpeg 1x" />
@@ -82,7 +82,6 @@
           <ul id="menu-personal" class="menu" role="menu">
             <li role="none"><a role="menuitem" href="./wdcc.html">Wacky’s Dungeon Combat Club</a></li>
             <li role="none"><a role="menuitem" href="./shattered.html">Shattered: Repair Your Identity</a></li>
-            <li role="none"><a role="menuitem" href="./machinations.html" aria-current="page">Machinations Crafting Economy</a></li>
           </ul>
         </div>
 
@@ -140,14 +139,14 @@
           <ul class="list">
             <li>Loot source feeds a rarity gate into <em>Common</em> and <em>Rare</em> pools.</li>
             <li>Craft consumes <strong>3× Common + 1× Rare</strong> to create an <em>Item</em>.</li>
-            <li>With gold added: loot also yields <strong>d6 gold</strong>; craft costs <strong>20 gold</strong>; selling an item returns <strong>15 gold</strong>. :contentReference[oaicite:1]{index=1}</li>
+            <li>With gold added: loot also yields <strong>d6 gold</strong>; craft costs <strong>20 gold</strong>; selling an item returns <strong>15 gold</strong></li>
           </ul>
         </div>
         <div class="card">
           <h2>Early Balance Checks</h2>
           <ul class="list">
             <li>20-step prediction: median <strong>Items=16</strong>, <strong>Gold=19</strong>.</li>
-            <li>100-step prediction: median <strong>Items=17</strong>, <strong>Gold=14</strong>. :contentReference[oaicite:2]{index=2}</li>
+            <li>100-step prediction: median <strong>Items=17</strong>, <strong>Gold=14</strong></li>
           </ul>
         </div>
       </section>
@@ -160,35 +159,35 @@
             <h3>Legendary Drop (Luck)</h3>
             <ul class="list">
               <li>Legendary pool at <strong>5%</strong>; Rare adjusted to <strong>35%</strong>.</li>
-              <li>Special craft: <strong>3× Rare + 1× Legendary + 35 gold</strong>; sell for <strong>25 gold</strong>. :contentReference[oaicite:3]{index=3}</li>
+              <li>Special craft: <strong>3× Rare + 1× Legendary + 35 gold</strong>; sell for <strong>25 gold</strong></li>
             </ul>
           </div>
           <div class="card">
             <h3>Efficiency Upgrade (Progression)</h3>
             <ul class="list">
               <li>Spend <strong>40 gold</strong> per level (max <strong>2</strong>).</li>
-              <li>Each level: −1 Common requirement; −5 gold craft cost (minimum 1 Common required). :contentReference[oaicite:4]{index=4}</li>
+              <li>Each level: −1 Common requirement; −5 gold craft cost (minimum 1 Common required)}</li>
             </ul>
           </div>
           <div class="card">
             <h3>Player Choice: Risk Craft</h3>
             <ul class="list">
               <li>Alternative craft: <strong>2× Common + 1× Rare + 15 gold</strong> with <strong>50%</strong> success.</li>
-              <li>Standard craft increased to <strong>5× Common + 2× Rare</strong> to justify risk. :contentReference[oaicite:5]{index=5}</li>
+              <li>Standard craft increased to <strong>5× Common + 2× Rare</strong> to justify risk</li>
             </ul>
           </div>
           <div class="card">
             <h3>Item Quality Tiers</h3>
             <ul class="list">
               <li>Craft outcomes: <strong>60% Common</strong>, <strong>35% Rare</strong>, <strong>15% Legendary</strong>.</li>
-              <li>Sell values: <strong>15 / 25 / 50 gold</strong> respectively. :contentReference[oaicite:6]{index=6}</li>
+              <li>Sell values: <strong>15 / 25 / 50 gold</strong> respectively</li>
             </ul>
           </div>
           <div class="card">
             <h3>Overproduction Penalties</h3>
             <ul class="list">
               <li>Caps: Common <strong>5</strong>, Rare <strong>10</strong>, Gold <strong>50</strong>.</li>
-              <li>Drains: −1 Common, −1 Rare, −25 Gold when caps are exceeded. :contentReference[oaicite:7]{index=7}</li>
+              <li>Drains: −1 Common, −1 Rare, −25 Gold when caps are exceeded</li>
             </ul>
           </div>
         </div>
@@ -201,14 +200,14 @@
           <ul class="list">
             <li><strong>Dynamic Loot</strong>: gold from loot scales as <code>d6*(20/(Gold+20))</code> → diminishing returns with stockpiling.</li>
             <li><strong>CommonValue / RareValue</strong>: required inputs rise with pool size (min 2C/1R). </li>
-            <li><strong>MarketPrice</strong>: selling price decreases as crafted supply grows. :contentReference[oaicite:8]{index=8}</li>
+            <li><strong>MarketPrice</strong>: selling price decreases as crafted supply grows</li>
           </ul>
         </div>
         <div class="card">
           <h2>Simulation Notes</h2>
           <ul class="list">
             <li>100-step run (manual sell): means — Items <strong>4.96</strong> (max 8), Common <strong>12.13</strong> (max 18), Rare <strong>5.65</strong> (max 9), Gold <strong>11.36</strong> (max 21).</li>
-            <li>Auto-sell enabled: Gold mean rises to <strong>38.35</strong> (max 56). :contentReference[oaicite:9]{index=9}</li>
+            <li>Auto-sell enabled: Gold mean rises to <strong>38.35</strong> (max 56)</li>
           </ul>
         </div>
       </section>
@@ -218,16 +217,16 @@
         <h2>Gallery</h2>
         <div class="gallery" role="list">
           <figure role="listitem">
-            <img src="./assets/placeholder1.webp" alt="Base loop: loot → rarity gate → common/rare → craft → item" />
-            <figcaption class="sr-only">Base loop (see diagram p.3). :contentReference[oaicite:10]{index=10}</figcaption>
+            <img src="./assets/machinations_crafting.png" alt="Base loop: loot → rarity gate → common/rare → craft → item" />
+            <figcaption class="sr-only">Base loop</figcaption>
           </figure>
           <figure role="listitem">
-            <img src="./assets/placeholder2.webp" alt="Gold layer with sell converter and craft cost" />
-            <figcaption class="sr-only">Gold layer (p.4). :contentReference[oaicite:11]{index=11}</figcaption>
+            <img src="./assets/machinations_legendary.png" alt="Legendary Crafting Layer" />
+            <figcaption class="sr-only">Legendary Crafting Simulation</figcaption>
           </figure>
           <figure role="listitem">
-            <img src="./assets/placeholder3.webp" alt="Dynamic market registers affecting costs and prices" />
-            <figcaption class="sr-only">Dynamic market (p.12). :contentReference[oaicite:12]{index=12}</figcaption>
+            <img src="./assets/machinations_overproduction.png" alt="Overproduction simulation and inherit consequences" />
+            <figcaption class="sr-only">Overproduction Simulation</figcaption>
           </figure>
         </div>
       </section>
@@ -235,7 +234,6 @@
       <!-- FOOT NAV -->
       <nav class="proj-foot-nav" aria-label="Project navigation">
         <a href="./shattered.html" rel="prev">← Previous</a>
-        <a href="./ww3.html" rel="next">Next →</a>
       </nav>
     </main>
 
