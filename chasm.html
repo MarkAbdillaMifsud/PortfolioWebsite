@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Shattered — Case Study | Mark Abdilla Mifsud</title>
+    <title>Deep Within the Chasm | Mark Abdilla Mifsud</title>
     <meta
       name="description"
-      content="Case study: Shattered — a narrative exploration game built in 48 hours for Global Game Jam 2020 (Theme: Repair). Roles: Game Design & Audio. Focus: environmental storytelling, tension through sound."
+      content="Deep Within the Chasm — A simple zombie shooter submitted for the GameDev.tv 2020 Game Jam. Roles: Solo Developer. Focus: Fast Action with Time Pressure."
     />
-    <meta property="og:title" content="Shattered — Case Study | Mark Abdilla Mifsud" />
-    <meta property="og:description" content="Global Game Jam 2020 project. Narrative design, exploration, and audio craft around the theme ‘Repair’." />
+    <meta property="og:title" content="Deep Within the Chasm | Mark Abdilla Mifsud" />
+    <meta property="og:description" content="GameDev.tv Game Jam 2020 project. Solo project built around the theme 'Time'." />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="./assets/shattered_og.jpg" />
     <meta name="theme-color" content="#121212" />
 
     <!-- Preload hero image -->
-    <link rel="preload" href="./assets/shattered1.webp" as="image" imagesrcset="./assets/shattered1.webp 1x" />
+    <link rel="preload" href="./assets/chasm.png" as="image" imagesrcset="./assets/chasm.png 1x" />
 
     <link rel="icon" href="./assets/favicon.ico" />
     <link rel="stylesheet" href="./style.css" />
@@ -80,9 +80,9 @@
             Personal Projects
           </button>
           <ul id="menu-personal" class="menu" role="menu">
-            <li role="none"><a role="menuitem" href="./chasm.html" aria-current="page">Deep Within the Chasm</a></li>
             <li role="none">
-              <a role="menuitem" href="./economy.html">Machinations Crafting Economy</a>
+                <a role="menuitem" href="./shattered.html">Shattered: Repair Your Identity</a>
+                <a role="menuitem" href="./economy.html">Machinations Crafting Economy</a>
             </li>
           </ul>
         </div>
@@ -96,42 +96,40 @@
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="./index.html">Home</a> /
         <a href="./personal.html">Personal</a> /
-        <span aria-current="page">Shattered</span>
+        <span aria-current="page">Deep Within the Chasm</span>
       </nav>
 
       <!-- HERO -->
       <section class="project-hero">
         <div>
-          <p class="badge">Narrative Design • Exploration • Audio Design</p>
-          <h1>Shattered: Repair Your Identity</h1>
+          <p class="badge">Level Design • Unity Development • Audio Design • Combat Design</p>
+          <h1>Deep Within the Chasm</h1>
           <p class="lead">
-            A narrative exploration prototype built for Global Game Jam 2020 (Theme: <em>Repair</em>). The player wakes in an empty house with no
-            recollection of self. By exploring rooms, recovering fragments, and listening for audio cues, they reconstruct who they were — and who they
-            might become.
+            A simple zombie shooter submitted for the GameDev.tv 2020 Game Jam (Theme: <em>Time</em>). The Player must cross the Chasm and survive zombies in the area, reaching the end of the level before time runs out.
           </p>
           <div class="badge-row" role="list" aria-label="Tags">
-            <span class="badge" role="listitem">Narrative Design</span>
-            <span class="badge" role="listitem">Environmental Storytelling</span>
-            <span class="badge" role="listitem">Exploration</span>
+            <span class="badge" role="listitem">Level Design</span>
+            <span class="badge" role="listitem">Unity Development</span>
             <span class="badge" role="listitem">Audio Design</span>
+            <span class="badge" role="listitem">Combat Design</span>
           </div>
         </div>
         <aside class="meta" aria-labelledby="project-meta">
           <h2 id="project-meta" class="sr-only">Project metadata</h2>
           <dl>
             <dt>Role</dt>
-            <dd>Game Designer, Writer, Audio Designer</dd>
+            <dd>Solo Developer</dd>
             <dt>Jam</dt>
-            <dd>Global Game Jam 2020 — Theme: “Repair”</dd>
+            <dd>GameDev.tv Game Jam 2020 — Theme: "Time"</dd>
             <dt>Timeframe</dt>
             <dd>48 hours</dd>
             <dt>Scope</dt>
-            <dd>Narrative structure, room/fragment system, audio tension & stingers</dd>
+            <dd>Time tension, FPS combat, simple enemy design</dd>
             <dt>Tech</dt>
             <dd>Unity, Audacity</dd>
             <dt>Link</dt>
             <dd>
-              <a href="https://v3.globalgamejam.org/2020/games/project-seven-0" target="_blank" rel="noopener">GGJ Submission Page</a>
+              <a href="https://gansher.itch.io/deep-within-the-chasm" target="_blank" rel="noopener">Itch.io Page</a>
             </dd>
           </dl>
         </aside>
@@ -142,17 +140,15 @@
         <div class="card">
           <h2>Context</h2>
           <ul class="list">
-            <li>Jam constraints: 48h build, theme-driven (“Repair”), minimal assets.</li>
-            <li>Goal to test environmental storytelling without heavy UI or VO.</li>
-            <li>Solo audio pipeline using Audacity; quick iteration on loops and stingers.</li>
+            <li>Jam constraints: 48h build, theme-driven ("Time"), minimal assets.</li>
+            <li>Solely responsible for project development from start to finish.</li>
           </ul>
         </div>
         <div class="card">
           <h2>Goals</h2>
           <ul class="list">
-            <li>Deliver a coherent loop: explore → find fragment → unlock memory → progress.</li>
-            <li>Use sound to create tension and orientation without jump scares.</li>
-            <li>Ship a playable slice with a beginning, midpoint reveal, and resolution.</li>
+            <li>Challenge myself into creating a playable prototype in time for submission.</li>
+            <li>Meet the requirements of the theme and keep project in scope.</li>
           </ul>
         </div>
       </section>
@@ -162,19 +158,19 @@
         <div class="card">
           <h2>Approach</h2>
           <ul class="list">
-            <li>Spatial storytelling via room semantics (kitchen, study, bedroom) tied to identity facets.</li>
-            <li>Collectible “fragments” populate a timeline; each fragment unlocks a short prose memory.</li>
-            <li>Audio layers: base ambience, proximity hum for interactables, one-shot stingers for reveals.</li>
-            <li>Low-contrast UI; interaction affordances handled in-world to avoid HUD clutter.</li>
+            <li>Establish a gameplay slice where the player must reach the end before time runs out.</li>
+            <li>Zombies are in the way and player gets points for kills.</li>
+            <li>Kills and time left contribute to final high score.</li>
+            <li>Simple UX and no clutter to keep things simple.</li>
           </ul>
         </div>
         <div class="card">
           <h2>Responsibilities</h2>
           <ul class="list">
-            <li>Narrative beats and scene sequencing.</li>
-            <li>Interaction rules and exploration pacing.</li>
-            <li>Sound design: ambience beds, foley, stingers; mix and attenuation curves.</li>
-            <li>Playtest loops and tuning under jam constraints.</li>
+            <li>Produce full code base.</li>
+            <li>Create sandbox and design requirements.</li>
+            <li>Simple sound design and audio editing in Audacity.</li>
+            <li>QA and bug identification/fixing.</li>
           </ul>
         </div>
       </section>
@@ -186,17 +182,17 @@
           <div class="card">
             <h3>Fragments & Rooms</h3>
             <ul class="list">
-              <li>Each room gates 1–2 fragments with light spatial puzzles.</li>
-              <li>Fragments unlock micro-memories; three aligned memories unlock a new area.</li>
-              <li>Endgame “mirror” scene replays key audio motifs to resolve the arc.</li>
+              <li>Player has access to a single weapon.</li>
+              <li>Limited ammunition to heighten tension.</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Audio as Guidance</h3>
+            <h3>Difficulties encountered</h3>
             <ul class="list">
-              <li>Proximity cue increases in volume and stereo width near interactables.</li>
-              <li>Minor-key stingers reserved for narrative reveals to avoid cue fatigue.</li>
-              <li>Dynamic low-pass when reading memories to focus attention.</li>
+              <li>Requires much more polish.</li>
+              <li>Feedback delays need to be addressed.</li>
+              <li>Code base needs to be improved in order to cater for expansions.</li>
+              <li>Could use a lot of modernisation in newer Unity Engine.</li>
             </ul>
           </div>
         </div>
@@ -207,20 +203,16 @@
         <h2>Gallery</h2>
         <div class="gallery" role="list">
           <figure role="listitem">
-            <img src="./assets/shattered1.png" alt="Entrance hallway with scattered notes and a dim lamp" />
+            <img src="./assets/chasm.png" alt="Logo" />
             <figcaption class="sr-only">Entrance hallway</figcaption>
           </figure>
           <figure role="listitem">
-            <img src="./assets/shattered2.png" alt="Bedroom scene where a memory fragment glows beside a nightstand" />
+            <img src="./assets/chasm2.png" alt="Gameplay Screenshot" />
             <figcaption class="sr-only">Bedroom fragment</figcaption>
           </figure>
           <figure role="listitem">
-            <img src="./assets/shattered3.png" alt="Study room puzzle with books and a highlighted ledger" />
+            <img src="./assets/chasm3.png" alt="Gameplay Screenshot" />
             <figcaption class="sr-only">Study puzzle</figcaption>
-          </figure>
-          <figure role="listitem">
-            <img src="./assets/shattered4.png" alt="Mirror room used for the finale and identity reveal" />
-            <figcaption class="sr-only">Mirror finale</figcaption>
           </figure>
         </div>
       </section>
@@ -231,23 +223,15 @@
           <h2>Outcome</h2>
           <ul class="list">
             <li>Submitted a complete vertical slice with start–finish arc within jam time.</li>
-            <li>Playtests confirmed audio cues reduced aimless wandering and improved flow.</li>
-            <li>Post-jam interest to expand into branching memories and alternate endings.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>Next Steps</h2>
-          <ul class="list">
-            <li>Branching memory graph with soft locks and optional fragments.</li>
-            <li>Diegetic map journal to track discovered facets of identity.</li>
-            <li>Expanded sound palette with adaptive reverb by room size/materials.</li>
+            <li>Easy to play and jump into.</li>
+            <li>Requires more interesting mechanics and pulls.</li>
           </ul>
         </div>
       </section>
 
       <!-- CREDITS -->
       <section class="section credits">
-        <p>Built during Global Game Jam 2020. Roles listed above reflect my contributions.</p>
+        <p>Built during Gamedev.tv Game Jam 2020. Contributed as the Solo Developer.</p>
       </section>
 
       <!-- FOOT NAV -->
