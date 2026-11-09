@@ -270,6 +270,7 @@ hr {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
     gap: 16px;
     width: 100%;
 }
@@ -277,7 +278,6 @@ hr {
 .project-card {
     position: relative;
     display: grid;
-    grid-template-rows: auto auto 1fr;
     border: 1px solid var(--border);
     background: var(--surface);
     border-radius: 12px;
@@ -292,7 +292,7 @@ hr {
     display: block;
     inline-size: 100%;
     block-size: auto;
-    aspect-ratio: 2.25;
+    aspect-ratio: 11 / 4;
     object-fit: cover;
     border-block: 1px solid var(--border);
 }
@@ -303,13 +303,14 @@ hr {
 }
 
 .project-card-heading {
-    padding: 14px 16px 12px;
+    padding: 12px 14px 9px;
 }
 
 .project-card-heading h3 {
     margin: 4px 0 0;
     color: var(--fg-strong);
-    font-size: 1.2rem;
+    font-size: 1.125rem;
+    line-height: 1.25;
 }
 
 .project-card p {
@@ -329,9 +330,10 @@ hr {
 .project-card-body {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 12px 16px 16px;
-    line-height: 1.5;
+    gap: 6px;
+    padding: 9px 14px 12px;
+    font-size: .9375rem;
+    line-height: 1.45;
 }
 
 .project-card .role {
@@ -340,8 +342,7 @@ hr {
 
 .project-card-action {
     align-self: flex-start;
-    margin-block-start: auto;
-    padding-block-start: 4px;
+    padding-block-start: 2px;
     color: var(--accent);
     font-weight: 650;
     text-decoration: underline;
@@ -866,9 +867,35 @@ hr {
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1000px) {
     .projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-card {
+        grid-template-columns: minmax(0, 1fr) 5.5rem;
+        gap: 8px 12px;
+        align-items: start;
+        padding: 12px 14px;
+    }
+
+    .card-hero {
+        grid-area: 1 / 2;
+        aspect-ratio: 3 / 2;
+        object-fit: contain;
+        background: var(--elevated);
+        border: 0;
+        border-radius: 6px;
+    }
+
+    .project-card-heading {
+        grid-area: 1 / 1;
+        padding: 0;
+    }
+
+    .project-card-body {
+        grid-column: 1 / -1;
+        padding: 0;
     }
 }
 
@@ -915,39 +942,21 @@ hr {
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .project-card {
-        grid-template-columns: minmax(0, 1fr) 5.5rem;
-        grid-template-rows: auto 1fr;
-        gap: 8px 12px;
-        align-items: start;
-        padding: 14px;
-    }
-
-    .card-hero {
-        grid-area: 1 / 2;
-        aspect-ratio: 1.5;
-        border: 0;
-        border-radius: 6px;
-    }
-
-    .project-card-heading {
-        grid-area: 1 / 1;
-        padding: 0;
-    }
-
     .project-card-heading h3 {
         font-size: 1.0625rem;
-    }
-
-    .project-card-body {
-        grid-column: 1 / -1;
-        padding: 0;
     }
 
     .about-intro {
         grid-template-areas: "title portrait" "bio bio";
         align-items: center;
         gap: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .project-card {
+        grid-template-columns: minmax(0, 1fr) 4rem;
+        column-gap: 8px;
     }
 }
 
