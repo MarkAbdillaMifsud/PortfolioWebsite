@@ -6,7 +6,7 @@
     <title>Deep Within the Chasm | Mark Abdilla Mifsud</title>
     <meta
       name="description"
-      content="Deep Within the Chasm — A simple zombie shooter submitted for the GameDev.tv 2020 Game Jam. Roles: Solo Developer. Focus: Fast Action with Time Pressure."
+      content="A solo first-person shooter prototype for the GameDev.tv Community Jam, built around a countdown, combat and ammunition."
     />
     <meta property="og:title" content="Deep Within the Chasm | Mark Abdilla Mifsud" />
     <meta property="og:description" content="GameDev.tv Game Jam 2020 project. Solo project built around the theme 'Time'." />
@@ -15,7 +15,6 @@
     <meta name="theme-color" content="#121212" />
 
     <!-- Preload hero image -->
-    <link rel="preload" href="./assets/chasm.png" as="image" imagesrcset="./assets/chasm.png 1x" />
 
     <script src="./assets/js/theme.js"></script>
     <link rel="stylesheet" href="./style.css" />
@@ -89,20 +88,14 @@
         <span aria-current="page">Deep Within the Chasm</span>
       </nav>
 
-      <!-- HERO -->
       <section class="project-hero">
         <div>
-          <p class="badge">Level Design • Unity Development • Audio Design • Combat Design</p>
           <h1>Deep Within the Chasm</h1>
           <p class="lead">
-            A simple zombie shooter submitted for the GameDev.tv 2020 Game Jam (Theme: <em>Time</em>). The Player must cross the Chasm and survive zombies in the area, reaching the end of the level before time runs out.
+            A solo first-person shooter prototype for the GameDev.tv Community
+            Jam theme <em>Time</em>. The player has to cross a valley, get past
+            zombies and reach the exit before the countdown runs out.
           </p>
-          <div class="badge-row" role="list" aria-label="Tags">
-            <span class="badge" role="listitem">Level Design</span>
-            <span class="badge" role="listitem">Unity Development</span>
-            <span class="badge" role="listitem">Audio Design</span>
-            <span class="badge" role="listitem">Combat Design</span>
-          </div>
         </div>
         <aside class="meta" aria-labelledby="project-meta">
           <h2 id="project-meta" class="sr-only">Project metadata</h2>
@@ -110,118 +103,58 @@
             <dt>Role</dt>
             <dd>Solo Developer</dd>
             <dt>Jam</dt>
-            <dd>GameDev.tv Game Jam 2020 — Theme: "Time"</dd>
-            <dt>Timeframe</dt>
-            <dd>48 hours</dd>
-            <dt>Scope</dt>
-            <dd>Time tension, FPS combat, simple enemy design</dd>
-            <dt>Tech</dt>
+            <dd>GameDev.tv Community Jam 2020</dd>
+            <dt>Tools</dt>
             <dd>Unity, Audacity</dd>
-            <dt>Link</dt>
-            <dd>
-              <a href="https://gansher.itch.io/deep-within-the-chasm" target="_blank" rel="noopener">Itch.io Page</a>
-            </dd>
+            <dt>Submission</dt>
+            <dd><a href="https://gansher.itch.io/deep-within-the-chasm" target="_blank" rel="noopener">View the jam submission on Itch.io</a></dd>
+            <dt>Source</dt>
+            <dd><a href="https://github.com/MarkAbdillaMifsud/DeepWithinTheChasm" target="_blank" rel="noopener">Browse the Unity project</a></dd>
           </dl>
         </aside>
       </section>
 
-      <!-- CONTEXT / GOALS -->
-      <section class="two-col section">
-        <div class="card">
-          <h2>Context</h2>
-          <ul class="list">
-            <li>Jam constraints: 48h build, theme-driven ("Time"), minimal assets.</li>
-            <li>Solely responsible for project development from start to finish.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>Goals</h2>
-          <ul class="list">
-            <li>Challenge myself into creating a playable prototype in time for submission.</li>
-            <li>Meet the requirements of the theme and keep project in scope.</li>
-          </ul>
-        </div>
+      <section class="section case-section" aria-labelledby="gameplay">
+        <h2 id="gameplay">Designing around the countdown</h2>
+        <p>
+          I used the timer to turn traversal into a series of decisions about
+          when to fight and when to keep moving. Entering a trigger starts
+          the countdown, running out of time ends the attempt, and reaching
+          the exit completes the level.
+        </p>
+        <p>
+          The Unity project supports weapon switching, separate ammunition
+          pools and pickups. Firing spends ammunition, and running dry gives
+          an audio cue. The HUD shows remaining time, health and ammunition.
+        </p>
       </section>
 
-      <!-- APPROACH / RESPONSIBILITIES -->
-      <section class="two-col section">
-        <div class="card">
-          <h2>Approach</h2>
-          <ul class="list">
-            <li>Establish a gameplay slice where the player must reach the end before time runs out.</li>
-            <li>Zombies are in the way and player gets points for kills.</li>
-            <li>Kills and time left contribute to final high score.</li>
-            <li>Simple UX and no clutter to keep things simple.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>Responsibilities</h2>
-          <ul class="list">
-            <li>Produce full code base.</li>
-            <li>Create sandbox and design requirements.</li>
-            <li>Simple sound design and audio editing in Audacity.</li>
-            <li>QA and bug identification/fixing.</li>
-          </ul>
-        </div>
+      <section class="section case-section" aria-labelledby="retrospective">
+        <h2 id="retrospective">My contribution and next pass</h2>
+        <p>
+          I handled the level, gameplay code and audio as the solo developer
+          and submitted the prototype to the jam. For another pass, I’d
+          tighten feedback when shooting and taking damage, then vary
+          encounters so the choice between fighting and moving stays interesting.
+        </p>
       </section>
 
-      <!-- SYSTEMS -->
-      <section class="section">
-        <h2>System Designs</h2>
-        <div class="two-col">
-          <div class="card">
-            <h3>Combat and Ammunition</h3>
-            <ul class="list">
-              <li>Player has access to a single weapon.</li>
-              <li>Limited ammunition to heighten tension.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Difficulties encountered</h3>
-            <ul class="list">
-              <li>Requires much more polish.</li>
-              <li>Feedback delays need to be addressed.</li>
-              <li>Code base needs to be improved in order to cater for expansions.</li>
-              <li>Could use a lot of modernisation in newer Unity Engine.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- GALLERY -->
-      <section class="section">
-        <h2>Gallery</h2>
-        <div class="gallery" role="list">
-          <figure role="listitem">
-            <img src="./assets/chasm.png" alt="Deep Within the Chasm title beside outstretched zombie hands" />
+      <section class="section case-section" aria-labelledby="prototype-gallery">
+        <h2 id="prototype-gallery">Prototype screenshots</h2>
+        <div class="gallery">
+          <figure>
+            <img src="./assets/chasm.png" alt="Deep Within the Chasm title beside outstretched zombie hands" loading="lazy" />
             <figcaption>Project key art</figcaption>
           </figure>
-          <figure role="listitem">
-            <img src="./assets/chasm2.png" alt="First-person view of a zombie approaching at the edge of the forest" />
+          <figure>
+            <img src="./assets/chasm2.png" alt="First-person view of a zombie approaching at the edge of the forest" loading="lazy" />
             <figcaption>Encounter with an approaching zombie</figcaption>
           </figure>
-          <figure role="listitem">
-            <img src="./assets/chasm3.png" alt="First-person view across a mountain valley with a fallen zombie in the foreground" />
-            <figcaption>Valley traversal after combat</figcaption>
+          <figure>
+            <img src="./assets/chasm3.png" alt="First-person view across a mountain valley with a fallen zombie in the foreground" loading="lazy" />
+            <figcaption>Valley view with the combat HUD</figcaption>
           </figure>
         </div>
-      </section>
-
-      <!-- IMPACT / NEXT -->
-      <section class="two-col section">
-        <div class="card">
-          <h2>Outcome</h2>
-          <ul class="list">
-            <li>Submitted a complete vertical slice with start–finish arc within jam time.</li>
-            <li>Easy to play and jump into.</li>
-            <li>Requires more interesting mechanics and pulls.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- CREDITS -->
-      <section class="section credits">
-        <p>Built during Gamedev.tv Game Jam 2020. Contributed as the Solo Developer.</p>
       </section>
 
       <nav class="proj-foot-nav" aria-label="Project navigation">

@@ -570,6 +570,79 @@ hr {
     margin: 0 0 8px;
 }
 
+/* Case study reading layout */
+.case-section {
+    max-inline-size: 50rem;
+    margin-inline: auto;
+    line-height: 1.6;
+}
+
+.case-section h3 {
+    margin: 0 0 8px;
+    color: var(--fg-strong);
+    font-size: 1.05rem;
+}
+
+.case-section p {
+    margin: 0 0 12px;
+}
+
+.case-section p:last-child {
+    margin-block-end: 0;
+}
+
+.case-section .list + p {
+    margin-block-start: 12px;
+}
+
+.case-section a,
+.project-hero .meta a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.case-section a:hover,
+.case-section a:focus-visible,
+.project-hero .meta a:hover,
+.project-hero .meta a:focus-visible {
+    color: var(--fg-strong);
+}
+
+.case-figure {
+    margin: 16px 0;
+}
+
+.case-figure-small {
+    max-inline-size: 24rem;
+}
+
+.case-figure > a,
+.case-section .gallery figure > a {
+    display: block;
+    border-radius: 10px;
+}
+
+.case-figure img,
+.case-section .gallery img {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.case-figure figcaption {
+    margin-block-start: 6px;
+    color: var(--text-muted);
+    font-size: .875rem;
+}
+
+.case-section .gallery img {
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background: var(--surface);
+}
+
 /* Card */
 .card {
     border: 1px solid var(--border);

@@ -7,7 +7,7 @@
     <title>Machinations Crafting Economy — Case Study | Mark Abdilla Mifsud</title>
     <meta
       name="description"
-      content="Personal project: systems design and difficulty progression using Machinations. Loot→crafting economy with gold, legendary items, efficiency upgrades, risk-based crafting, item quality tiers, overproduction penalties, and a dynamic market."
+      content="A Machinations simulation exploring loot, crafting risk, resource stockpiling and a dynamic market."
     />
     <meta property="og:title" content="Machinations Crafting Economy — Case Study" />
     <meta property="og:description" content="Systems & balance design: crafting economy, risk, rarity, and market regulation built in Machinations." />
@@ -88,21 +88,15 @@
         <span aria-current="page">Machinations Crafting Economy</span>
       </nav>
 
-      <!-- HERO -->
       <section class="project-hero">
         <div>
-          <p class="badge">Systems Design • Machinations • Balance • Difficulty</p>
           <h1>Machinations Crafting Economy</h1>
           <p class="lead">
-            A loot→crafting economy prototyped in Machinations, then extended with gold sinks/sources, rarity & quality tiers, risk-based crafting,
-            efficiency upgrades, inventory caps, and a dynamic market that reacts to stockpiling.
+            I built a simulation to explore a balancing question: how can a
+            crafting loop make materials worth gathering, give players a reason
+            to spend gold and still offer a meaningful choice between a safe
+            recipe and a cheaper, riskier one?
           </p>
-          <div class="badge-row" role="list" aria-label="Tags">
-            <span class="badge" role="listitem">Economy Design</span>
-            <span class="badge" role="listitem">Progression</span>
-            <span class="badge" role="listitem">Simulation</span>
-            <span class="badge" role="listitem">Tuning</span>
-          </div>
         </div>
         <aside class="meta" aria-labelledby="project-meta">
           <h2 id="project-meta" class="sr-only">Project metadata</h2>
@@ -111,113 +105,117 @@
             <dd>Systems Designer</dd>
             <dt>Timeline</dt>
             <dd>Apr 2025</dd>
-            <dt>Tools</dt>
-            <dd>Machinations</dd>
-            <dt>Link</dt>
-            <dd>
-              <a href="https://my.machinations.io/d/sm4659---2025-coursework-2/678c04f90d6611f0abac028ecffc1261" target="_blank" rel="noopener">
-                Final Diagram
-              </a>
-            </dd>
+            <dt>Evidence</dt>
+            <dd>Prototype variants and simulation runs in Machinations</dd>
+            <dt>Interactive model</dt>
+            <dd><a href="https://my.machinations.io/d/sm4659---2025-coursework-2/678c04f90d6611f0abac028ecffc1261" target="_blank" rel="noopener">Open the market simulator</a></dd>
           </dl>
         </aside>
       </section>
 
-      <!-- OVERVIEW -->
-      <section class="two-col section">
-        <div class="card">
-          <h2>Base Loop</h2>
-          <ul class="list">
-            <li>Loot source feeds a rarity gate into <em>Common</em> and <em>Rare</em> pools.</li>
-            <li>Craft consumes <strong>3× Common + 1× Rare</strong> to create an <em>Item</em>.</li>
-            <li>With gold added: loot also yields <strong>d6 gold</strong>; craft costs <strong>20 gold</strong>; selling an item returns <strong>15 gold</strong></li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>Early Balance Checks</h2>
-          <ul class="list">
-            <li>20-step prediction: median <strong>Items=16</strong>, <strong>Gold=19</strong>.</li>
-            <li>100-step prediction: median <strong>Items=17</strong>, <strong>Gold=14</strong></li>
-          </ul>
-        </div>
+      <section class="section case-section" aria-labelledby="base-loop">
+        <h2 id="base-loop">The base loop</h2>
+        <p>
+          Loot supplies Common and Rare materials. In the base recipe, crafting
+          consumes three Common and one Rare material. Adding gold gives the loop
+          another source and sink: loot yields a six-sided die roll in gold,
+          crafting costs 20 gold and selling the item returns 15. The five-gold
+          difference keeps a craft-and-sell cycle from paying for itself.
+        </p>
       </section>
 
-      <!-- MECHANICS -->
-      <section class="section">
-        <h2>Difficulty & Depth Additions</h2>
+      <section class="section case-section" aria-labelledby="variants">
+        <h2 id="variants">What changed across variants</h2>
+        <p>The diagrams show separate versions of the loop used to explore different balancing questions.</p>
         <div class="two-col">
           <div class="card">
-            <h3>Legendary Drop (Luck)</h3>
-            <ul class="list">
-              <li>Legendary pool at <strong>5%</strong>; Rare adjusted to <strong>35%</strong>.</li>
-              <li>Special craft: <strong>3× Rare + 1× Legendary + 35 gold</strong>; sell for <strong>25 gold</strong></li>
-            </ul>
+            <h3>Rarity and progression</h3>
+            <p>
+              The legendary loot variant splits materials into 60% Common,
+              35% Rare and 5% Legendary. Its special recipe uses three Rare
+              materials, one Legendary and 35 gold, and sells for 25 gold.
+            </p>
+            <p>
+              A separate upgrade path lets players invest 40 gold per level for
+              up to two levels. Each level cuts the Common requirement by one,
+              to a minimum of one Common, and the crafting cost by five gold.
+              Common, Rare and Legendary items in the quality-tier variant
+              sell for 15, 25 and 50 gold respectively.
+            </p>
           </div>
           <div class="card">
-            <h3>Efficiency Upgrade (Progression)</h3>
-            <ul class="list">
-              <li>Spend <strong>40 gold</strong> per level (max <strong>2</strong>).</li>
-              <li>Each level: −1 Common requirement; −5 gold craft cost (minimum 1 Common required)}</li>
-            </ul>
+            <h3>Risk versus certainty</h3>
+            <p>
+              In the risk variant, the guaranteed recipe costs five Common,
+              two Rare and 20 gold. The alternative costs two Common, one Rare
+              and 15 gold per attempt, with a 50% chance of producing an item.
+            </p>
+            <p>
+              If each attempt consumes its inputs, two attempts are needed on
+              average per success. That saves one Common material on average
+              and uses the same amount of Rare, while raising the expected
+              gold cost from 20 to 30 and introducing the chance of a failed craft.
+            </p>
           </div>
           <div class="card">
-            <h3>Player Choice: Risk Craft</h3>
-            <ul class="list">
-              <li>Alternative craft: <strong>2× Common + 1× Rare + 15 gold</strong> with <strong>50%</strong> success.</li>
-              <li>Standard craft increased to <strong>5× Common + 2× Rare</strong> to justify risk</li>
-            </ul>
+            <h3>Stockpiling thresholds</h3>
+            <p>
+              Crossing five Common, ten Rare or 50 gold triggers a drain of
+              one Common, one Rare or 25 gold from the corresponding pool.
+              These thresholds trigger a penalty and allow temporary balances
+              above the threshold.
+            </p>
           </div>
           <div class="card">
-            <h3>Item Quality Tiers</h3>
-            <ul class="list">
-              <li>Craft outcomes: <strong>60% Common</strong>, <strong>35% Rare</strong>, <strong>15% Legendary</strong>.</li>
-              <li>Sell values: <strong>15 / 25 / 50 gold</strong> respectively</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Overproduction Penalties</h3>
-            <ul class="list">
-              <li>Caps: Common <strong>5</strong>, Rare <strong>10</strong>, Gold <strong>50</strong>.</li>
-              <li>Drains: −1 Common, −1 Rare, −25 Gold when caps are exceeded</li>
-            </ul>
+            <h3>Dynamic market</h3>
+            <p>
+              In the linked market variant, gold from loot scales by
+              <code>20 / (current gold + 20)</code>. Larger material stocks
+              raise the crafting input requirements, and a larger stock of
+              crafted items lowers their sale price, with a floor of five gold.
+            </p>
           </div>
         </div>
       </section>
 
-      <!-- INNOVATION -->
-      <section class="two-col section">
-        <div class="card">
-          <h2>Dynamic Market Economy</h2>
-          <ul class="list">
-            <li><strong>Dynamic Loot</strong>: gold from loot scales as <code>d6*(20/(Gold+20))</code> → diminishing returns with stockpiling.</li>
-            <li><strong>CommonValue / RareValue</strong>: required inputs rise with pool size (min 2C/1R). </li>
-            <li><strong>MarketPrice</strong>: selling price decreases as crafted supply grows</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>Simulation Notes</h2>
-          <ul class="list">
-            <li>100-step run (manual sell): means — Items <strong>4.96</strong> (max 8), Common <strong>12.13</strong> (max 18), Rare <strong>5.65</strong> (max 9), Gold <strong>11.36</strong> (max 21).</li>
-            <li>Auto-sell enabled: Gold mean rises to <strong>38.35</strong> (max 56)</li>
-          </ul>
-        </div>
+      <section class="section case-section" aria-labelledby="simulation">
+        <h2 id="simulation">Simulation and observations</h2>
+        <p>
+          Early 20-step and 100-step forecasts reported median stocks of
+          16 and 17 items, with 19 and 14 gold respectively. Later simulation
+          notes recorded the following balances:
+        </p>
+        <ul class="list">
+          <li><strong>Manual sell, 100 steps:</strong> mean gold balance 11.36, peak 21. Mean stocks were 4.96 items, 12.13 Common and 5.65 Rare, with peaks of 8, 18 and 9.</li>
+          <li><strong>Auto-sell:</strong> mean gold balance 38.35, peak 56.</li>
+        </ul>
+        <p>
+          The figures suggest that the selling rule matters. I’d repeat both
+          policies across matched runs and compare time spent above the drain
+          thresholds as well as average balances.
+        </p>
       </section>
 
-      <!-- GALLERY (placeholders; diagrams described in the PDF on pp. 3–12) -->
-      <section class="section">
-        <h2>Gallery</h2>
-        <div class="gallery" role="list">
-          <figure role="listitem">
-            <img src="./assets/machinations_crafting.png" alt="Base loop: loot → rarity gate → common/rare → craft → item" />
-            <figcaption class="sr-only">Base loop</figcaption>
+      <section class="section case-section" aria-labelledby="diagrams">
+        <h2 id="diagrams">Model diagrams</h2>
+        <div class="gallery diagram-gallery">
+          <figure>
+            <a href="./assets/machinations_crafting.png" aria-label="View the full-size risk-crafting diagram">
+              <img src="./assets/machinations_crafting.png" alt="Machinations diagram comparing a guaranteed recipe with a lower-cost recipe gated by a 50% chance" loading="lazy" />
+            </a>
+            <figcaption>Guaranteed and risk-based crafting</figcaption>
           </figure>
-          <figure role="listitem">
-            <img src="./assets/machinations_legendary.png" alt="Legendary Crafting Layer" />
-            <figcaption class="sr-only">Legendary Crafting Simulation</figcaption>
+          <figure>
+            <a href="./assets/machinations_legendary.png" aria-label="View the full-size legendary loot diagram">
+              <img src="./assets/machinations_legendary.png" alt="Machinations diagram with a 60% Common, 35% Rare and 5% Legendary loot split" loading="lazy" />
+            </a>
+            <figcaption>Legendary loot and the special recipe</figcaption>
           </figure>
-          <figure role="listitem">
-            <img src="./assets/machinations_overproduction.png" alt="Overproduction simulation and inherit consequences" />
-            <figcaption class="sr-only">Overproduction Simulation</figcaption>
+          <figure>
+            <a href="./assets/machinations_overproduction.png" aria-label="View the full-size stockpiling diagram">
+              <img src="./assets/machinations_overproduction.png" alt="Machinations diagram with separate drains for Common, Rare and gold when their balances cross a threshold" loading="lazy" />
+            </a>
+            <figcaption>Stockpiling thresholds and drains</figcaption>
           </figure>
         </div>
       </section>
