@@ -1,5 +1,6 @@
 /* ===== Design Tokens ===== */
 :root {
+    color-scheme: dark;
     /* Neutral palette (dark default) */
     --bg: #0F1115;
     /* page background */
@@ -8,6 +9,7 @@
     --elevated: #1E222A;
     /* hero, overlays */
     --border: #2B313C;
+    --control-border: #677385;
     /* dividers, outlines */
 
     --fg: #B5BDC9;
@@ -35,17 +37,19 @@
 
 /* Optional light theme */
 [data-theme="light"] {
+    color-scheme: light;
     --bg: #FAFAFC;
     --surface: #FFFFFF;
     --elevated: #F5F7FA;
     --border: #E5E7EB;
+    --control-border: #6B7280;
 
     --fg: #46505A;
     --fg-strong: #0B1220;
     --text-muted: #5B6673;
     --muted: #5B6673;
 
-    --accent: #0B6BFF;
+    --accent: #075AD9;
     --accent-hover: #3B86FF;
     --accent-contrast: #FFFFFF;
 
@@ -234,7 +238,7 @@ hr {
 .intro-action {
     display: inline-block;
     padding: 10px 14px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--control-border);
     border-radius: 8px;
     background: var(--surface);
     color: var(--fg-strong);
@@ -265,13 +269,9 @@ hr {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
     width: 100%;
-}
-
-.independent-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .project-card {
@@ -291,6 +291,7 @@ hr {
 .card-hero {
     display: block;
     inline-size: 100%;
+    block-size: auto;
     aspect-ratio: 2.25;
     object-fit: cover;
     border-block: 1px solid var(--border);
@@ -762,7 +763,7 @@ hr {
     width: 40px;
     height: 40px;
     border-radius: 8px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--control-border);
     background: var(--surface);
     color: var(--fg);
     cursor: pointer;
@@ -771,7 +772,7 @@ hr {
 
 .theme-toggle:hover {
     transform: translateY(-1px);
-    border-color: color-mix(in oklab, var(--accent) 30%, var(--border));
+    border-color: var(--accent);
 }
 
 .theme-toggle:focus-visible {
@@ -801,6 +802,11 @@ hr {
 
 .project-menu summary::-webkit-details-marker {
     display: none;
+}
+
+.project-menu[open] summary > span {
+    display: inline-block;
+    transform: rotate(180deg);
 }
 
 .menu {
@@ -861,7 +867,7 @@ hr {
 }
 
 @media (max-width: 760px) {
-    .independent-grid {
+    .projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
@@ -942,5 +948,18 @@ hr {
         grid-template-areas: "title portrait" "bio bio";
         align-items: center;
         gap: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .links-container > a > img,
+    .skip-link,
+    .theme-toggle {
+        transition: none;
+    }
+
+    .links-container > a:hover > img,
+    .theme-toggle:hover {
+        transform: none;
     }
 }

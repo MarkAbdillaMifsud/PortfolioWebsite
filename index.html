@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mark Abdilla Mifsud | Monetization, LiveOps &amp; Game Economy Design</title>
     <meta name="description" content="Selected work by Mark Abdilla Mifsud in free-to-play monetization, LiveOps, game economy design and game prototyping." />
+    <link rel="canonical" href="https://markabdillamifsud.github.io/PortfolioWebsite/" />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://markabdillamifsud.github.io/PortfolioWebsite/" />
+    <meta property="og:title" content="Mark Abdilla Mifsud | Monetization, LiveOps &amp; Game Economy Design" />
+    <meta property="og:description" content="Selected work by Mark Abdilla Mifsud in free-to-play monetization, LiveOps, game economy design and game prototyping." />
+    <meta property="og:image" content="https://markabdillamifsud.github.io/PortfolioWebsite/assets/profile_picture.jpeg" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:image:alt" content="Portrait of Mark Abdilla Mifsud" />
+    <meta name="twitter:card" content="summary" />
     <script src="./assets/js/theme.js"></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
@@ -21,11 +32,10 @@
           <button
             id="themeToggle"
             class="theme-toggle"
-            aria-label="Toggle light/dark mode"
-            title="Toggle theme"
+            aria-label="Light theme"
+            title="Toggle light/dark mode"
           >
             <span class="theme-toggle__icon" aria-hidden="true"></span>
-            <span class="sr-only">Toggle theme</span>
           </button>
           <a href="https://github.com/MarkAbdillaMifsud/">
             <img
@@ -33,11 +43,11 @@
               src="./assets/github_darkmode.png"
               data-dark="./assets/github_darkmode.png"
               data-light="./assets/github_lightmode.png"
-              alt="GitHub Logo"
+              alt="GitHub"
             />
           </a>
           <a href="https://www.linkedin.com/in/mark-abdilla/"
-            ><img src="./assets/Linkedin.png" alt="LinkedIn Logo"
+            ><img src="./assets/Linkedin.png" alt="LinkedIn"
           /></a>
           <a href="./assets/Mark_Abdilla_Mifsud_Resume.pdf"
             ><img src="./assets/PDF.png" alt="Resume PDF"
@@ -55,6 +65,7 @@
               <ul class="menu">
                 <li><a href="./ww3.html">Supremacy: World War 3</a></li>
                 <li><a href="./whs.html">Supremacy: Warhammer 40,000</a></li>
+                <li><a href="./mergedragons.html">Merge Dragons</a></li>
               </ul>
             </details>
           </li>
@@ -96,7 +107,7 @@
               <p class="project-focus">Live game · Monetization &amp; LiveOps</p>
               <h3 id="ww3-card-title">Supremacy: World War 3</h3>
             </div>
-            <img class="card-hero" src="./assets/ww3.jpg" alt="" />
+            <img class="card-hero" src="./assets/ww3.jpg" width="460" height="215" alt="" />
             <div class="project-card-body">
               <p class="role">Community Manager / Monetization Manager</p>
               <p>
@@ -112,7 +123,7 @@
               <p class="project-focus">Launch planning · Monetization</p>
               <h3 id="whs-card-title">Supremacy: Warhammer 40,000</h3>
             </div>
-            <img class="card-hero" src="./assets/wh-poster.png" alt="" />
+            <img class="card-hero" src="./assets/wh-poster.jpg" width="1200" height="513" alt="" />
             <div class="project-card-body">
               <p class="role">Principal Monetization Manager</p>
               <p>
@@ -122,18 +133,31 @@
               <a class="project-card-action" href="./whs.html" aria-labelledby="whs-card-title whs-card-action"><span id="whs-card-action">View case study</span> <span aria-hidden="true">→</span></a>
             </div>
           </article>
+
+          <article class="project-card">
+            <div class="project-card-heading">
+              <p class="project-focus">Mobile game · Monetization &amp; LiveOps</p>
+              <h3 id="md-card-title">Merge Dragons</h3>
+            </div>
+            <img class="card-hero" src="./assets/md.jpg" width="1400" height="788" alt="" />
+            <div class="project-card-body">
+              <p class="role">Monetization Manager</p>
+              <p>LiveOps performance analysis and monetization strategy for an established free-to-play mobile title.</p>
+              <a class="project-card-action" href="./mergedragons.html" aria-labelledby="md-card-title md-card-action"><span id="md-card-action">View project</span> <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
         </div>
       </section>
 
       <section class="projects-container" id="independent-projects" aria-labelledby="independent-heading">
         <h2 id="independent-heading">Independent Projects</h2>
-        <div class="projects-grid independent-grid">
+        <div class="projects-grid">
           <article class="project-card">
             <div class="project-card-heading">
               <p class="project-focus">Game economy · Simulation</p>
               <h3 id="economy-card-title">Machinations Crafting Economy</h3>
             </div>
-            <img class="card-hero card-diagram" src="./assets/machinations_crafting.png" alt="" loading="lazy" />
+            <img class="card-hero card-diagram" src="./assets/machinations_crafting.png" width="605" height="467" alt="" loading="lazy" />
             <div class="project-card-body">
               <p class="role">Systems Designer</p>
               <p>Modelled how loot rarity, crafting costs and inventory limits shape a crafting economy.</p>
@@ -146,7 +170,7 @@
               <p class="project-focus">Game jam · Combat &amp; level design</p>
               <h3 id="chasm-card-title">Deep Within the Chasm</h3>
             </div>
-            <img class="card-hero" src="./assets/chasm.png" alt="" loading="lazy" />
+            <img class="card-hero" src="./assets/chasm-cover.jpg" width="1200" height="448" alt="" loading="lazy" />
             <div class="project-card-body">
               <p class="role">Solo Developer</p>
               <p>Built a timed first-person zombie shooter prototype for the GameDev.tv Game Jam.</p>
@@ -159,7 +183,7 @@
               <p class="project-focus">Game jam · Narrative &amp; audio</p>
               <h3 id="shattered-card-title">Shattered: Repair Your Identity</h3>
             </div>
-            <img class="card-hero" src="./assets/shattered_logo.png" alt="" loading="lazy" />
+            <img class="card-hero" src="./assets/shattered_logo.png" width="354" height="251" alt="" loading="lazy" />
             <div class="project-card-body">
               <p class="role">Game Designer, Writer, Audio Designer</p>
               <p>Worked on narrative, exploration pacing and audio for a Global Game Jam prototype.</p>

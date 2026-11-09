@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,11 +8,17 @@
       name="description"
       content="A solo first-person shooter prototype for the GameDev.tv Community Jam, built around a countdown, combat and ammunition."
     />
-    <meta property="og:title" content="Deep Within the Chasm | Mark Abdilla Mifsud" />
-    <meta property="og:description" content="GameDev.tv Game Jam 2020 project. Solo project built around the theme 'Time'." />
+    <link rel="canonical" href="https://markabdillamifsud.github.io/PortfolioWebsite/chasm.html" />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://markabdillamifsud.github.io/PortfolioWebsite/assets/chasm.png" />
-    <meta name="theme-color" content="#121212" />
+    <meta property="og:url" content="https://markabdillamifsud.github.io/PortfolioWebsite/chasm.html" />
+    <meta property="og:title" content="Deep Within the Chasm | Mark Abdilla Mifsud" />
+    <meta property="og:description" content="A solo first-person shooter prototype for the GameDev.tv Community Jam, built around a countdown, combat and ammunition." />
+    <meta property="og:image" content="https://markabdillamifsud.github.io/PortfolioWebsite/assets/chasm-cover.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="448" />
+    <meta property="og:image:alt" content="Deep Within the Chasm title beside outstretched zombie hands" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Preload hero image -->
 
@@ -29,9 +35,8 @@
           <p class="site-tagline">Monetization, LiveOps &amp; Game Design</p>
         </div>
         <div class="links-container" aria-label="External links">
-          <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+          <button id="themeToggle" class="theme-toggle" aria-label="Light theme" title="Toggle light/dark mode">
             <span class="theme-toggle__icon" aria-hidden="true"></span>
-            <span class="sr-only">Toggle theme</span>
           </button>
           <a href="https://github.com/MarkAbdillaMifsud/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <img
@@ -61,6 +66,7 @@
               <ul class="menu">
                 <li><a href="./ww3.html">Supremacy: World War 3</a></li>
                 <li><a href="./whs.html">Supremacy: Warhammer 40,000</a></li>
+                <li><a href="./mergedragons.html">Merge Dragons</a></li>
               </ul>
             </details>
           </li>
@@ -141,17 +147,22 @@
 
       <section class="section case-section" aria-labelledby="prototype-gallery">
         <h2 id="prototype-gallery">Prototype screenshots</h2>
+        <p>Select a gameplay screenshot to view it at full size.</p>
         <div class="gallery">
           <figure>
-            <img src="./assets/chasm.png" alt="Deep Within the Chasm title beside outstretched zombie hands" loading="lazy" />
+            <img src="./assets/chasm-cover.jpg" width="1200" height="448" alt="Deep Within the Chasm title beside outstretched zombie hands" loading="lazy" />
             <figcaption>Project key art</figcaption>
           </figure>
           <figure>
-            <img src="./assets/chasm2.png" alt="First-person view of a zombie approaching at the edge of the forest" loading="lazy" />
+            <a href="./assets/chasm2.png" aria-label="View the full-size combat screenshot">
+              <img src="./assets/chasm-combat.jpg" width="960" height="540" alt="First-person view of a zombie approaching at the edge of the forest" loading="lazy" />
+            </a>
             <figcaption>Encounter with an approaching zombie</figcaption>
           </figure>
           <figure>
-            <img src="./assets/chasm3.png" alt="First-person view across a mountain valley with a fallen zombie in the foreground" loading="lazy" />
+            <a href="./assets/chasm3.png" aria-label="View the full-size valley screenshot">
+              <img src="./assets/chasm-valley.jpg" width="960" height="540" alt="First-person view across a mountain valley with a fallen zombie in the foreground" loading="lazy" />
+            </a>
             <figcaption>Valley view with the combat HUD</figcaption>
           </figure>
         </div>

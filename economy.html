@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
   <!-- Source: Machinations assignment for mechanics/balance design :contentReference[oaicite:0]{index=0} -->
   <head>
     <meta charset="UTF-8" />
@@ -9,11 +9,17 @@
       name="description"
       content="A Machinations simulation exploring loot, crafting risk, resource stockpiling and a dynamic market."
     />
-    <meta property="og:title" content="Machinations Crafting Economy — Case Study" />
-    <meta property="og:description" content="Systems & balance design: crafting economy, risk, rarity, and market regulation built in Machinations." />
+    <link rel="canonical" href="https://markabdillamifsud.github.io/PortfolioWebsite/economy.html" />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://markabdillamifsud.github.io/PortfolioWebsite/economy.html" />
+    <meta property="og:title" content="Machinations Crafting Economy — Case Study | Mark Abdilla Mifsud" />
+    <meta property="og:description" content="A Machinations simulation exploring loot, crafting risk, resource stockpiling and a dynamic market." />
     <meta property="og:image" content="https://markabdillamifsud.github.io/PortfolioWebsite/assets/machinations_crafting.png" />
-    <meta name="theme-color" content="#121212" />
+    <meta property="og:image:width" content="605" />
+    <meta property="og:image:height" content="467" />
+    <meta property="og:image:alt" content="Machinations diagram comparing guaranteed and risk-based crafting" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <script src="./assets/js/theme.js"></script>
     <link rel="stylesheet" href="./style.css" />
@@ -29,9 +35,8 @@
           <p class="site-tagline">Monetization, LiveOps &amp; Game Design</p>
         </div>
         <div class="links-container" aria-label="External links">
-          <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+          <button id="themeToggle" class="theme-toggle" aria-label="Light theme" title="Toggle light/dark mode">
             <span class="theme-toggle__icon" aria-hidden="true"></span>
-            <span class="sr-only">Toggle theme</span>
           </button>
           <a href="https://github.com/MarkAbdillaMifsud/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <img
@@ -61,6 +66,7 @@
               <ul class="menu">
                 <li><a href="./ww3.html">Supremacy: World War 3</a></li>
                 <li><a href="./whs.html">Supremacy: Warhammer 40,000</a></li>
+                <li><a href="./mergedragons.html">Merge Dragons</a></li>
               </ul>
             </details>
           </li>
@@ -201,19 +207,19 @@
         <div class="gallery diagram-gallery">
           <figure>
             <a href="./assets/machinations_crafting.png" aria-label="View the full-size risk-crafting diagram">
-              <img src="./assets/machinations_crafting.png" alt="Machinations diagram comparing a guaranteed recipe with a lower-cost recipe gated by a 50% chance" loading="lazy" />
+              <img src="./assets/machinations_crafting.png" width="605" height="467" alt="Machinations diagram comparing a guaranteed recipe with a lower-cost recipe gated by a 50% chance" loading="lazy" />
             </a>
             <figcaption>Guaranteed and risk-based crafting</figcaption>
           </figure>
           <figure>
             <a href="./assets/machinations_legendary.png" aria-label="View the full-size legendary loot diagram">
-              <img src="./assets/machinations_legendary.png" alt="Machinations diagram with a 60% Common, 35% Rare and 5% Legendary loot split" loading="lazy" />
+              <img src="./assets/machinations_legendary.png" width="455" height="355" alt="Machinations diagram with a 60% Common, 35% Rare and 5% Legendary loot split" loading="lazy" />
             </a>
             <figcaption>Legendary loot and the special recipe</figcaption>
           </figure>
           <figure>
             <a href="./assets/machinations_overproduction.png" aria-label="View the full-size stockpiling diagram">
-              <img src="./assets/machinations_overproduction.png" alt="Machinations diagram with separate drains for Common, Rare and gold when their balances cross a threshold" loading="lazy" />
+              <img src="./assets/machinations_overproduction.png" width="608" height="591" alt="Machinations diagram with separate drains for Common, Rare and gold when their balances cross a threshold" loading="lazy" />
             </a>
             <figcaption>Stockpiling thresholds and drains</figcaption>
           </figure>
