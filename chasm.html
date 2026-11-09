@@ -11,32 +11,23 @@
     <meta property="og:title" content="Deep Within the Chasm | Mark Abdilla Mifsud" />
     <meta property="og:description" content="GameDev.tv Game Jam 2020 project. Solo project built around the theme 'Time'." />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="./assets/shattered_og.jpg" />
+    <meta property="og:image" content="https://markabdillamifsud.github.io/PortfolioWebsite/assets/chasm.png" />
     <meta name="theme-color" content="#121212" />
 
     <!-- Preload hero image -->
     <link rel="preload" href="./assets/chasm.png" as="image" imagesrcset="./assets/chasm.png 1x" />
 
-    <link rel="icon" href="./assets/favicon.ico" />
+    <script src="./assets/js/theme.js"></script>
     <link rel="stylesheet" href="./style.css" />
-    <script>
-      (function () {
-        var t = localStorage.getItem("theme");
-        if (!t && window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-          document.documentElement.setAttribute("data-theme", "light");
-        } else if (t === "light") {
-          document.documentElement.setAttribute("data-theme", "light");
-        }
-      })();
-    </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <!-- Header -->
     <header id="top-bar" class="container">
       <div class="heading-container">
         <div class="name-container">
-          <h1>Mark Abdilla Mifsud</h1>
-          <h2>Principal Monetization Manager and Game Designer</h2>
+          <p class="site-name">Mark Abdilla Mifsud</p>
+          <p class="site-tagline">Monetization, LiveOps &amp; Game Design</p>
         </div>
         <div class="links-container" aria-label="External links">
           <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
@@ -61,41 +52,40 @@
         </div>
       </div>
       <hr />
-      <a class="skip-link" href="#main">Skip to content</a>
       <nav class="nav-bar" aria-label="Primary">
-        <div><a href="./index.html">Home</a></div>
-
-        <div class="nav-item dropdown">
-          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-professional">
-            Professional Projects
-          </button>
-          <ul id="menu-professional" class="menu" role="menu">
-            <li role="none"><a role="menuitem" href="./whs.html">Supremacy: World War 3</a></li>
-            <li role="none"><a role="menuitem" href="./whs.html">Warhammer 40K: Supremacy</a></li>
-          </ul>
-        </div>
-
-        <div class="nav-item dropdown">
-          <button class="nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-personal">
-            Personal Projects
-          </button>
-          <ul id="menu-personal" class="menu" role="menu">
-            <li role="none">
-                <a role="menuitem" href="./shattered.html">Shattered: Repair Your Identity</a>
-                <a role="menuitem" href="./economy.html">Machinations Crafting Economy</a>
-            </li>
-          </ul>
-        </div>
-
-        <div><a href="./about.html">About and Resume</a></div>
+        <ul class="nav-list">
+          <li><a href="./index.html">Home</a></li>
+          <li class="nav-item">
+            <a href="./index.html#professional-work">Professional Work</a>
+            <details class="project-menu">
+              <summary aria-label="Professional project shortcuts"><span aria-hidden="true">▾</span></summary>
+              <ul class="menu">
+                <li><a href="./ww3.html">Supremacy: World War 3</a></li>
+                <li><a href="./whs.html">Supremacy: Warhammer 40,000</a></li>
+              </ul>
+            </details>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#independent-projects">Independent Projects</a>
+            <details class="project-menu">
+              <summary aria-label="Independent project shortcuts"><span aria-hidden="true">▾</span></summary>
+              <ul class="menu">
+                <li><a href="./economy.html">Machinations Crafting Economy</a></li>
+                <li><a href="./chasm.html" aria-current="page">Deep Within the Chasm</a></li>
+                <li><a href="./shattered.html">Shattered: Repair Your Identity</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="./about.html">About</a></li>
+        </ul>
       </nav>
       <hr />
     </header>
 
-    <main class="container" id="main">
+    <main class="container" id="main" tabindex="-1">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="./index.html">Home</a> /
-        <a href="./personal.html">Personal</a> /
+        <a href="./index.html#independent-projects">Independent Projects</a> /
         <span aria-current="page">Deep Within the Chasm</span>
       </nav>
 
@@ -180,7 +170,7 @@
         <h2>System Designs</h2>
         <div class="two-col">
           <div class="card">
-            <h3>Fragments & Rooms</h3>
+            <h3>Combat and Ammunition</h3>
             <ul class="list">
               <li>Player has access to a single weapon.</li>
               <li>Limited ammunition to heighten tension.</li>
@@ -203,16 +193,16 @@
         <h2>Gallery</h2>
         <div class="gallery" role="list">
           <figure role="listitem">
-            <img src="./assets/chasm.png" alt="Logo" />
-            <figcaption class="sr-only">Entrance hallway</figcaption>
+            <img src="./assets/chasm.png" alt="Deep Within the Chasm title beside outstretched zombie hands" />
+            <figcaption>Project key art</figcaption>
           </figure>
           <figure role="listitem">
-            <img src="./assets/chasm2.png" alt="Gameplay Screenshot" />
-            <figcaption class="sr-only">Bedroom fragment</figcaption>
+            <img src="./assets/chasm2.png" alt="First-person view of a zombie approaching at the edge of the forest" />
+            <figcaption>Encounter with an approaching zombie</figcaption>
           </figure>
           <figure role="listitem">
-            <img src="./assets/chasm3.png" alt="Gameplay Screenshot" />
-            <figcaption class="sr-only">Study puzzle</figcaption>
+            <img src="./assets/chasm3.png" alt="First-person view across a mountain valley with a fallen zombie in the foreground" />
+            <figcaption>Valley traversal after combat</figcaption>
           </figure>
         </div>
       </section>
@@ -234,9 +224,10 @@
         <p>Built during Gamedev.tv Game Jam 2020. Contributed as the Solo Developer.</p>
       </section>
 
-      <!-- FOOT NAV -->
       <nav class="proj-foot-nav" aria-label="Project navigation">
-        <a href="./economy.html" rel="next">Next →</a>
+        <a href="./economy.html" rel="prev">← Machinations Crafting Economy</a>
+        <a href="./index.html#independent-projects">Independent Projects</a>
+        <a href="./shattered.html" rel="next">Shattered: Repair Your Identity →</a>
       </nav>
     </main>
 
@@ -246,36 +237,6 @@
       <p>All content and trademarks property of their respective owners.</p>
     </footer>
 
-    <!-- Minimal JS to support dropdown accessibility and icon theming -->
-    <script>
-      // Dropdowns
-      document.querySelectorAll(".nav-trigger").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const expanded = btn.getAttribute("aria-expanded") === "true";
-          btn.setAttribute("aria-expanded", String(!expanded));
-          const menu = document.getElementById(btn.getAttribute("aria-controls"));
-          menu.classList.toggle("open", !expanded);
-        });
-      });
-
-      // Theme icon swap
-      const icon = document.getElementById("githubIcon");
-      const toggle = document.getElementById("themeToggle");
-      function applyIcon() {
-        const isLight = document.documentElement.getAttribute("data-theme") === "light";
-        if (icon && icon.dataset.light && icon.dataset.dark) {
-          icon.src = isLight ? icon.dataset.light : icon.dataset.dark;
-        }
-      }
-      applyIcon();
-      toggle?.addEventListener("click", () => {
-        const isLight = document.documentElement.getAttribute("data-theme") === "light";
-        const next = isLight ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", next);
-        localStorage.setItem("theme", next);
-        applyIcon();
-      });
-    </script>
-    <script src="./assets/js/theme.js" defer></script>
+    <script src="./assets/js/nav.js" defer></script>
   </body>
 </html>

@@ -1,45 +1,50 @@
 (function () {
   const root = document.documentElement;
-  const btn  = document.getElementById("themeToggle");
-  const mqLight = window.matchMedia("(prefers-color-scheme: light)");
+  const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
+  let preference;
 
-  function updateThemedIcons() {
-    const isLight = root.getAttribute("data-theme") === "light";
-    document.querySelectorAll("img[data-light][data-dark]").forEach(img => {
-      const target = isLight ? img.getAttribute("data-light")
-                             : img.getAttribute("data-dark");
-      if (img.getAttribute("src") !== target) img.setAttribute("src", target);
-    });
-  }
-
-  function setTheme(mode) {
-    if (mode === "light") {
-      root.setAttribute("data-theme", "light");
-      localStorage.setItem("theme", "light");
-    } else {
-      root.removeAttribute("data-theme"); // dark is default
-      localStorage.setItem("theme", "dark");
-    }
-    updateThemedIcons();
-    if (btn) btn.setAttribute("aria-pressed", mode === "light" ? "true" : "false");
-  }
-
-  function getTheme() {
+  try {
     const stored = localStorage.getItem("theme");
-    if (stored) return stored;
-    return mqLight.matches ? "light" : "dark";
+    if (stored === "light" || stored === "dark") preference = stored;
+  } catch {
+    // Storage may be unavailable. Follow the system theme until the user toggles it.
   }
+
+  function currentTheme() {
+    return preference ?? (systemTheme.matches ? "light" : "dark");
+  }
+
+  root.dataset.theme = currentTheme();
 
   document.addEventListener("DOMContentLoaded", () => {
-    setTheme(getTheme());
-    if (btn) {
-      btn.addEventListener("click", () => {
-        setTheme(getTheme() === "light" ? "dark" : "light");
-      });
+    const button = document.getElementById("themeToggle");
+    const icons = document.querySelectorAll("img[data-light][data-dark]");
+
+    function renderTheme() {
+      const theme = currentTheme();
+      root.dataset.theme = theme;
+      button?.setAttribute("aria-pressed", String(theme === "light"));
+      for (const icon of icons) {
+        const source = icon.dataset[theme];
+        if (icon.getAttribute("src") !== source) icon.setAttribute("src", source);
+      }
     }
-    // If user hasn’t explicitly chosen, follow OS changes live
-    mqLight.addEventListener?.("change", (e) => {
-      if (!localStorage.getItem("theme")) setTheme(e.matches ? "light" : "dark");
+
+    renderTheme();
+
+    button?.addEventListener("click", () => {
+      preference = currentTheme() === "light" ? "dark" : "light";
+      renderTheme();
+
+      try {
+        localStorage.setItem("theme", preference);
+      } catch {
+        // The selected theme still applies for this page.
+      }
+    });
+
+    systemTheme.addEventListener("change", () => {
+      if (!preference) renderTheme();
     });
   });
 })();
